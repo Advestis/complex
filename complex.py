@@ -4,7 +4,6 @@ import plotly.graph_objects as go
 import pandas as pd
 from plotly.graph_objs import Figure
 from typing import Union, Tuple
-from copy import copy
 
 
 class ForbiddenAssignmentError(Exception):
@@ -228,6 +227,15 @@ class Complex:
             self._guess_repr_from_string(s)
         else:
             self._guess_repr()
+
+    @property
+    def conjugate(self, repres: str = "cartesian"):
+        if repres == "cartesian":
+            return Complex(self.a, -self.b)
+        elif repres == "trigo" or repres == "exp":
+            return Complex(r=self.r, theta=-self.theta)
+        else:
+            raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
     def __str__(self) -> str:
         return self.to_string()
@@ -573,14 +581,44 @@ class Complex:
         8.0 + 4.0i
 
         """
-        comp = copy(self)
-        comp += other
-        return comp
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.a = new.a + other.a
+            new.b = new.b + other.b
+        else:
+            new.a = new.a + other
+        return new
 
     def __sub__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        comp = copy(self)
-        comp -= other
-        return comp
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> znumber2 = Complex(5, 6)
+        >>> print(znumber - znumber2)
+        -2.0 - 2.0i
+        >>> znumber2 = "5 + 6i"
+        >>> print(znumber - znumber2)
+        -2.0 - 2.0i
+        >>> znumber2 = 5
+        >>> print(znumber - znumber2)
+        -2.0 + 4.0i
+
+        """
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.a = new.a - other.a
+            new.b = new.b - other.b
+        else:
+            new.a = new.a - other
+        return new
 
     def __mul__(self, other: Union[int, float, "Complex", str]) -> "Complex":
         """
@@ -599,14 +637,44 @@ class Complex:
         15.0e^4.0i
 
         """
-        comp = copy(self)
-        comp *= other
-        return comp
+        new = Complex(self)
 
-    def __div__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        comp = copy(self)
-        comp /= other
-        return comp
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.r = new.r * other.r
+            new.theta = new.theta + other.theta
+        else:
+            new.r = new.r * other
+        return new
+
+    def __truediv__(self, other: Union[int, float, "Complex", str]) -> "Complex":
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(r=3, theta=4)
+        >>> znumber2 = Complex(r=5, theta=6)
+        >>> print((znumber / znumber2).to_string("exp"))
+        0.6e^-2.0i
+        >>> znumber2 = "5e^6i"
+        >>> print((znumber / znumber2).to_string("exp"))
+        0.6e^-2.0i
+        >>> znumber2 = 5
+        >>> print((znumber / znumber2).to_string("exp"))
+        0.6e^4.0i
+
+        """
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.r = new.r / other.r
+            new.theta = new.theta - other.theta
+        else:
+            new.r = new.r / other
+        return new
 
     def __pow__(self, other: Union[int, float, "Complex", str]) -> "Complex":
         """
@@ -629,39 +697,63 @@ class Complex:
         243.0e^20.0i
 
         """
-        comp = copy(self)
-        comp **= other
-        return comp
+        new = Complex(self)
+
+        if isinstance(other, str) or isinstance(other, Complex):
+            return NotImplemented
+        new.r = new.r ** other
+        new.theta = new.theta * other
+        return new
 
     # Reflected arithmetic operators
 
     def __radd__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        elif isinstance(other, int) or isinstance(other, float):
-            other = Complex(a=other)
-        return other.__add__(self)
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> print(1 + znumber)
+        4.0 + 4.0i
+
+        """
+        return self + other
 
     def __rsub__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        elif isinstance(other, int) or isinstance(other, float):
-            other = Complex(a=other)
-        return other.__sub__(self)
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> print(1 - znumber)
+        2.0 + 4.0i
+
+        """
+        return self - other
 
     def __rmul__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        elif isinstance(other, int) or isinstance(other, float):
-            other = Complex(a=other)
-        return other.__mul__(self)
+        """
 
-    def __rdiv__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        elif isinstance(other, int) or isinstance(other, float):
-            other = Complex(a=other)
-        return other.__div__(self)
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> print(2 * znumber)
+        6.0 + 8.0i
+
+        """
+        return self * other
+
+    def __rtruediv__(self, other: Union[int, float, "Complex", str]) -> "Complex":
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> print(3 / znumber)
+        0.36 - 0.48i
+
+        """
+        return self.conjugate * other / self.mod ** 2
 
     def __rpow__(self, other: Union[int, float, "Complex", str]) -> "Complex":
         return NotImplemented
@@ -669,51 +761,77 @@ class Complex:
     # Augmented assignment
 
     def __iadd__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        if isinstance(other, Complex):
-            self.a = self.a + other.a
-            self.b = self.b + other.b
-        else:
-            self.a = self.a + other
-        return self
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> znumber += Complex(5, 6)
+        >>> print(znumber)
+        8.0 + 10.0i
+
+        """
+        return self + other
 
     def __isub__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        if isinstance(other, Complex):
-            self.a = self.a - other.a
-            self.b = self.b - other.b
-        else:
-            self.a = self.a - other
-        return self
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(3, 4)
+        >>> znumber -= Complex(5, 6)
+        >>> print(znumber)
+        -2.0 - 2.0i
+
+        """
+        return self - other
 
     def __imul__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        if isinstance(other, Complex):
-            self.r = self.r * other.r
-            self.theta = self.theta + other.theta
-        else:
-            self.r = self.r * other
-        return self
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(r=3, theta=4)
+        >>> znumber *= Complex(r=5, theta=6)
+        >>> print(znumber.to_string("exp"))
+        15.0e^10.0i
+
+        """
+        return self * other
 
     def __idiv__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str):
-            other = Complex(s=other)
-        if isinstance(other, Complex):
-            self.r = self.r / other.r
-            self.theta = self.theta - other.theta
-        else:
-            self.r = self.r / other
-        return self
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(r=3, theta=4)
+        >>> znumber /= Complex(r=5, theta=6)
+        >>> print(znumber.to_string("exp"))
+        0.6e^-2.0i
+
+        """
+        return self / other
 
     def __ipow__(self, other: Union[int, float, "Complex", str]) -> "Complex":
-        if isinstance(other, str) or isinstance(other, Complex):
-            return NotImplemented
-        self.r = self.r ** other
-        self.theta = self.theta * other
-        return self
+        """
+
+        Examples
+        --------
+        >>> znumber = Complex(r=3, theta=4)
+        >>> znumber **= Complex(r=5, theta=6)
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): 'Complex' and 'Complex'
+        >>> znumber **= "5e^6i"
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): 'Complex' and 'str'
+        >>> znumber **= 5
+        >>> print(znumber.to_string("exp"))
+        243.0e^20.0i
+
+        """
+        return self ** other
 
     def __copy__(self) -> "Complex":
         return Complex(z=self)
