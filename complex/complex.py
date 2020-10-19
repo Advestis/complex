@@ -3,7 +3,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 from plotly.graph_objs import Figure
-from typing import Union, Tuple
+from typing import Union, Tuple, SupportsFloat
 
 
 class ForbiddenAssignmentError(Exception):
@@ -244,7 +244,7 @@ class Complex:
         return self.to_repr()
 
     def to_string(self, repres: str = "cartesian") -> str:
-        """
+        """ Human-readable str
 
         Examples
         --------
@@ -268,7 +268,7 @@ class Complex:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
     def to_repr(self, repres: str = "cartesian") -> str:
-        """
+        """ str readable by exec() or eval()
 
         Examples
         --------
@@ -304,7 +304,7 @@ class Complex:
         >>> print(z.to_latex("trigo"))
         $4.242640687119285 \\times (\\cos(0.7853981633974483) + i \\sin(0.7853981633974483))$
         >>> print(z.to_latex("exp"))
-        4.242640687119285 \\text{e}^{0.7853981633974483 i}
+        $4.242640687119285 \\text{e}^{0.7853981633974483 i}$
 
         """
         if repres == "cartesian":
@@ -312,7 +312,7 @@ class Complex:
         elif repres == "trigo":
             return f"${self.r} \\times (\\cos({self.theta}) + i \\sin({self.theta}))$"
         elif repres == "exp":
-            return f"{self.r} \\text{{e}}^{{{self.theta} i}}"
+            return f"${self.r} \\text{{e}}^{{{self.theta} i}}$"
         else:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
@@ -926,3 +926,37 @@ class Complex:
             else:
                 self.a = float(s.split("+")[0].replace(" ", ""))
                 self.b = float(s.split("+")[1].replace(" ", "").replace("i", ""))
+
+
+i = Complex(0, 1)
+
+mathexp = math.exp
+
+
+def myexp(x) -> Union[float, Complex]:
+    if isinstance(x, Complex):
+        return mathexp(x.a) * Complex(r=1, theta=x.b)
+    else:
+        return mathexp(x)
+
+
+math.exp = myexp
+
+mathlog = math.log
+
+
+def mylog(x: Union[SupportsFloat, Complex], base=None) -> Union[float, Complex]:
+    if isinstance(x, Complex):
+        if base is None:
+            return mathlog(x.r) + i * x.theta
+        else:
+            return mathlog(x.r, base) + i * x.theta / mathlog(base)
+    else:
+        print(x)
+        if base is None:
+            return mathlog(x)
+        else:
+            return mathlog(x, base)
+
+
+math.log = mylog
