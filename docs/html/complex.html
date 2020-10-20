@@ -266,7 +266,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="s2">&quot;trigo&quot;</span><span class="p">))</span>
 <span class="go">$4.242640687119285 \times (\cos(0.7853981633974483) + i \sin(0.7853981633974483))$</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
-<span class="go">4.242640687119285 \text{e}^{0.7853981633974483 i}</span>
+<span class="go">$4.242640687119285 \text{e}^{0.7853981633974483 i}$</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -274,7 +274,8 @@
 <dl class="py method">
 <dt id="complex.Complex.to_repr">
 <code class="sig-name descname">to_repr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repres</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'cartesian'</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#complex.Complex.to_repr" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Examples</p>
+<dd><p>str readable by exec() or eval()</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
 <span class="go">3.0 + 3.0 * i</span>
@@ -289,7 +290,8 @@
 <dl class="py method">
 <dt id="complex.Complex.to_string">
 <code class="sig-name descname">to_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repres</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'cartesian'</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#complex.Complex.to_string" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Examples</p>
+<dd><p>Human-readable str</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="go">3.0 + 3.0i</span>
@@ -332,6 +334,16 @@
 <code class="sig-prename descclassname">complex.</code><code class="sig-name descname">compatible_numbers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n1</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">n2</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1e-08</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#complex.compatible_numbers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True of both numbers are equal or almost the same</p>
 </dd></dl>
+
+<dl class="py function">
+<dt id="complex.myexp">
+<code class="sig-prename descclassname">complex.</code><code class="sig-name descname">myexp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>float<span class="p">, </span><a class="reference internal" href="#complex.Complex" title="complex.Complex">complex.Complex</a><span class="p">]</span><a class="headerlink" href="#complex.myexp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="complex.mylog">
+<code class="sig-prename descclassname">complex.</code><code class="sig-name descname">mylog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>SupportsFloat<span class="p">, </span><a class="reference internal" href="#complex.Complex" title="complex.Complex">complex.Complex</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">base</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>float<span class="p">, </span><a class="reference internal" href="#complex.Complex" title="complex.Complex">complex.Complex</a><span class="p">]</span><a class="headerlink" href="#complex.mylog" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt id="complex.r_theta_from_ab">
