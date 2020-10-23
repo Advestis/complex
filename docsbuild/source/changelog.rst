@@ -11,6 +11,10 @@ New
   [pcotte]
 - Made into a module. [pcotte]
 
+Changes
+~~~~~~~
+- Updated documentation. [pcotte]
+
 Other
 ~~~~~
 - Added __pycache__ to gitignore. [pcotte]

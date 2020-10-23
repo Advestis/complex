@@ -1,3 +1,7 @@
+---
+permalink: /docs/index.html
+---
+
 # Complex
 
 A class implementing the notion of complex number
