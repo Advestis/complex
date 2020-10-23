@@ -2,6 +2,8 @@
 permalink: /docs/index.html
 ---
 
+**The official documentation is available at https://advestis.github.io/complex/**
+
 # Complex
 
 A class implementing the notion of complex number
