@@ -21,6 +21,7 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - name: doc
         run: |
+          make install
           make doc
       - name: commit
         run: |
