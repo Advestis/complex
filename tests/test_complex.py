@@ -1,13 +1,21 @@
 from complex import Complex, i
 import math
+import pytest
 
 
-def test_init():
+@pytest.mark.parametrize(
+    "a, b, expected_r",
+    [
+        (3, 4, 5),
+        (4, 5, 6)
+    ]
+)
+def test_init(a, b, expected_r):
     print("\n\n\nTesting init...\n")
-    znumber = Complex(3, 4)
-    assert znumber.a == 3
-    assert znumber.b == 4
-    assert int(znumber.r) == 5
+    znumber = Complex(a, b)
+    assert znumber.a == a
+    assert znumber.b == b
+    assert int(znumber.r) == expected_r
 
 
 def test_i():
