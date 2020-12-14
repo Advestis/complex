@@ -1,3 +1,11 @@
+SHELL=/bin/bash
+
+ifneq (,$(wildcard ./.env))
+    include .env
+    export
+endif
+
+
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 PACKAGE := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
 
