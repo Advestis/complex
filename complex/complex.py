@@ -213,6 +213,9 @@ class Complex:
             r = None
             theta = None
 
+        if r is not None and r < 0:
+            raise ValueError("A complex number's norm cannot be negative!")
+
         self.__a = float(a) if a is not None else None
         self.__b = float(b) if b is not None else None
         self.__r = float(r) if r is not None else None
