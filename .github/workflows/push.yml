@@ -52,7 +52,6 @@ jobs:
       - name: make doc
         run: make doc
 
-
       - name: commit doc
         run: |
           git config --local user.email "action@github.com"
