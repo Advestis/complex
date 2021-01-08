@@ -50,7 +50,8 @@ jobs:
           force: true
 
       - name: make doc
-          make doc
+        run: make doc
+
 
       - name: commit doc
         run: |
