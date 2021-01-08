@@ -10,7 +10,7 @@ RUN pip3 install setuptools
 COPY . /install
 
 
-# Install: complex
+# Install
 RUN cd /install/ || exit 1 && python setup.py install;
 
 
