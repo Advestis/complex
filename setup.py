@@ -5,7 +5,7 @@ from typing import List
 from setuptools import find_packages, setup
 
 
-name = Path(__file__).parent.stem
+name = Path(__file__).absolute().parent.stem
 author = "Philippe COTTE"
 author_email = "pcotte@advestis.com"
 description = "A class implementing the notion of complex number"
