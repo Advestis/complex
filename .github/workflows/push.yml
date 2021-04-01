@@ -32,6 +32,7 @@ jobs:
       - name: build
         run: |
           make install
+          python setup.py sdist
 
       - name: commit version
         run: |
