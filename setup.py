@@ -129,9 +129,8 @@ if __name__ == "__main__":
     print("")
     print("Managin apt-requirements.txt...")
     if Path("apt-requirements.txt").is_file():
-        try:
-            os.system("chmod +x install-apt.sh && ./install-apt.sh")
-        except:
+        _ = os.system("chmod +x install-apt.sh && ./install-apt.sh")
+        if _ != 0:
             apt_requirements = Path("apt-requirements.txt").read_text().splitlines()
             s = "WARNING: Found apt-requirements.txt and could not install its content. You will have to install it " \
                 "by hand :"
@@ -145,9 +144,8 @@ if __name__ == "__main__":
     print("")
     print("Managin gspip-requirements.txt...")
     if Path("gspip-requirements.txt").is_file():
-        try:
-            os.system("chmod +x install-gspip.sh && ./install-gspip.sh")
-        except:
+        _ = os.system("chmod +x install-gspip.sh && ./install-gspip.sh")
+        if _ != 0:
             gspip_requirements = Path("gspip-requirements.txt").read_text().splitlines()
             s = "Found gspip-requirements.txt and could not install its content. You will have to install it from gcs :"
             s = " - ".join([s] + gspip_requirements)
