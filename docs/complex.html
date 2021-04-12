@@ -1,0 +1,2642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>complex.complex API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>complex.complex</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import math
+import plotly.express as px
+import plotly.graph_objects as go
+import pandas as pd
+from plotly.graph_objs import Figure
+from typing import Union, Tuple, SupportsFloat
+
+
+class ForbiddenAssignmentError(Exception):
+    pass
+
+
+PROTECTED_ATTRIBUTES = [&#34;_Complex__a&#34;, &#34;_Complex__b&#34;, &#34;_Complex__r&#34;, &#34;_Complex__theta&#34;]
+ATTRIBUTES = [&#34;a&#34;, &#34;b&#34;, &#34;r&#34;, &#34;theta&#34;]
+CARTESIAN_ATTRIBUTES = [&#34;a&#34;, &#34;b&#34;]
+
+
+def compatible_numbers(n1: float, n2: float, threshold: float = 1e-8) -&gt; bool:
+    &#34;&#34;&#34;Returns True of both numbers are equal or almost the same&#34;&#34;&#34;
+    if n1 == n2:
+        return True
+
+    if abs((n1 - n2) / n1) &lt; threshold:
+        return True
+
+    return False
+
+
+def r_theta_from_ab(a: Union[float, None], b: [float, None]) -&gt; [Tuple[float, float], Tuple[None, None]]:
+    if a is None or b is None:
+        return None, None
+    r = math.sqrt(a ** 2 + b ** 2)
+    if b &gt; 0:
+        theta = math.acos(a / r)
+    else:
+        theta = -math.acos(a / r)
+
+    if abs(theta) &lt; 1e-15:
+        theta = 0.0
+    return r, theta
+
+
+def ab_from_r_theta(r: [float, None], theta: [float, None]) -&gt; [Tuple[float, float], Tuple[None, None]]:
+    if r is None or theta is None:
+        return None, None
+    a = r * math.cos(theta)
+    b = r * math.sin(theta)
+    if abs(a) &lt; 1e-15:
+        a = 0.0
+    if abs(b) &lt; 1e-15:
+        b = 0.0
+    return a, b
+
+
+class Complex:
+    def __init__(
+        self,
+        a: Union[float, &#34;Complex&#34;] = None,
+        b: float = None,
+        r: float = None,
+        theta: float = None,
+        s: str = None,
+        z: &#34;Complex&#34; = None,
+    ):
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(3, 4, 5, 0.9)
+        Traceback (most recent call last):
+          ...
+        ValueError: You specified both cartesian and trigo representations but the values are not compatible
+        &gt;&gt;&gt; znumber = Complex(3, 4, 5, 0.9272952180016123)
+
+        &gt;&gt;&gt; znumber = Complex(r=5, theta=0.9272952180016123)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3+4i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        0.0
+        &gt;&gt;&gt; print(znumber.r)
+        3.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.0
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;4i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        0.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        4.0
+        &gt;&gt;&gt; print(znumber.theta)
+        1.5707963267948966
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3cos(0)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        0.0
+        &gt;&gt;&gt; print(znumber.r)
+        3.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.0
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;4isin(1.5707963267948966)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        0.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        4.0
+        &gt;&gt;&gt; print(znumber.theta)
+        1.5707963267948966
+
+        &gt;&gt;&gt; # In case your string can not be a complex (here we would have two different r for instance),
+        &gt;&gt;&gt; # it is the part in &#39;cos&#39; that is used.
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3cos(4) + 4isin(1)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        -1.960930862590836
+        &gt;&gt;&gt; print(znumber.b)
+        -2.2704074859237844
+        &gt;&gt;&gt; print(znumber.r)
+        3.0
+        &gt;&gt;&gt; print(znumber.theta)
+        4.0
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3 + 4 * i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;5e^0.9272952180016123i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;5*(cos(0.9272952180016123i) + isin(0.9272952180016123i)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber_2 = Complex(z=znumber)
+        &gt;&gt;&gt; print(znumber_2.a)
+        3.0
+        &gt;&gt;&gt; print(znumber_2.b)
+        4.0
+        &gt;&gt;&gt; print(znumber_2.r)
+        5.0
+        &gt;&gt;&gt; print(znumber_2.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber_2 = Complex(znumber)
+        &gt;&gt;&gt; print(znumber_2.a)
+        3.0
+        &gt;&gt;&gt; print(znumber_2.b)
+        4.0
+        &gt;&gt;&gt; print(znumber_2.r)
+        5.0
+        &gt;&gt;&gt; print(znumber_2.theta)
+        0.9272952180016123
+
+        &#34;&#34;&#34;
+
+        if isinstance(a, Complex):
+            z = a
+            a = None
+            b = None
+            r = None
+            theta = None
+
+        if r is not None and r &lt; 0:
+            raise ValueError(&#34;A complex number&#39;s norm cannot be negative!&#34;)
+
+        self.__a = float(a) if a is not None else None
+        self.__b = float(b) if b is not None else None
+        self.__r = float(r) if r is not None else None
+        self.__theta = float(theta) if theta is not None else None
+
+        if z:
+            self.a = z.a
+            self.b = z.b
+            self.r = z.r
+            self.theta = z.theta
+        elif s:
+            self._guess_repr_from_string(s)
+        else:
+            self._guess_repr()
+
+    @property
+    def conjugate(self, repres: str = &#34;cartesian&#34;):
+        if repres == &#34;cartesian&#34;:
+            return Complex(self.a, -self.b)
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=self.r, theta=-self.theta)
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def __str__(self) -&gt; str:
+        return self.to_string()
+
+    def __repr__(self) -&gt; str:
+        return self.to_repr()
+
+    def to_string(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+        &#34;&#34;&#34; Human-readable str
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 3)
+        &gt;&gt;&gt; print(z)
+        3.0 + 3.0i
+        &gt;&gt;&gt; print(z.to_string(&#34;trigo&#34;))
+        4.242640687119285 * (cos(0.7853981633974483) + isin(0.7853981633974483))
+        &gt;&gt;&gt; print(z.to_string(&#34;exp&#34;))
+        4.242640687119285e^0.7853981633974483i
+
+        &#34;&#34;&#34;
+        bsign = &#34;+&#34; if self.b &gt; 0 else &#34;-&#34;
+        if repres == &#34;cartesian&#34;:
+            return f&#34;{self.a} {bsign} {abs(self.b)}i&#34;
+        elif repres == &#34;trigo&#34;:
+            return f&#34;{self.r} * (cos({self.theta}) + isin({self.theta}))&#34;
+        elif repres == &#34;exp&#34;:
+            return f&#34;{self.r}e^{self.theta}i&#34;
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def to_repr(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+        &#34;&#34;&#34; str readable by exec() or eval()
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 3)
+        &gt;&gt;&gt; print(repr(z))
+        3.0 + 3.0 * i
+        &gt;&gt;&gt; print(z.to_repr(&#34;trigo&#34;))
+        4.242640687119285 * (cos(0.7853981633974483) + i * sin(0.7853981633974483))
+        &gt;&gt;&gt; print(z.to_repr(&#34;exp&#34;))
+        4.242640687119285 * e ** (0.7853981633974483 * i)
+
+        &#34;&#34;&#34;
+        bsign = &#34;+&#34; if self.b &gt; 0 else &#34;-&#34;
+        if repres == &#34;cartesian&#34;:
+            return f&#34;{self.a} {bsign} {abs(self.b)} * i&#34;
+        elif repres == &#34;trigo&#34;:
+            return f&#34;{self.r} * (cos({self.theta}) + i * sin({self.theta}))&#34;
+        elif repres == &#34;exp&#34;:
+            return f&#34;{self.r} * e ** ({self.theta} * i)&#34;
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    # Class methods
+
+    def to_latex(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 3)
+        &gt;&gt;&gt; print(z.to_latex())
+        $3.0 + 3.0i$
+        &gt;&gt;&gt; print(z.to_latex(&#34;trigo&#34;))
+        $4.242640687119285 \\times (\\cos(0.7853981633974483) + i \\sin(0.7853981633974483))$
+        &gt;&gt;&gt; print(z.to_latex(&#34;exp&#34;))
+        $4.242640687119285 \\text{e}^{0.7853981633974483 i}$
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return f&#34;${self.a} + {self.b}i$&#34;
+        elif repres == &#34;trigo&#34;:
+            return f&#34;${self.r} \\times (\\cos({self.theta}) + i \\sin({self.theta}))$&#34;
+        elif repres == &#34;exp&#34;:
+            return f&#34;${self.r} \\text{{e}}^{{{self.theta} i}}$&#34;
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def round(self, n: int, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.round(n=2))
+        3.12 + 4.79i
+        &gt;&gt;&gt; print((znumber.round(n=2, repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        5.72e^0.99i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(round(self.a, n), round(self.b, n))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=round(self.r, n), theta=round(self.theta, n))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def ceil(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.ceil())
+        4.0 + 5.0i
+        &gt;&gt;&gt; print((znumber.ceil(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        6.0e^1.0i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(math.ceil(self.a), math.ceil(self.b))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=math.ceil(self.r), theta=math.ceil(self.theta))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def floor(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.floor())
+        3.0 + 4.0i
+        &gt;&gt;&gt; print((znumber.floor(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        5.0e^0.0i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(math.floor(self.a), math.floor(self.b))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=math.floor(self.r), theta=math.floor(self.theta))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def trunc(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.trunc())
+        3.0 + 4.0i
+        &gt;&gt;&gt; print((znumber.trunc(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        5.0e^0.0i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(math.trunc(self.a), math.trunc(self.b))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=math.trunc(self.r), theta=math.trunc(self.theta))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def plot(self, fig: Figure = None, **kwargs) -&gt; Figure:
+        if fig is None:
+            fig = px.scatter(
+                pd.DataFrame(columns=[&#34;$\\mathbb{R}$&#34;, &#34;$\\mathbb{C}$&#34;], data=[[self.a, self.b]]),
+                x=&#34;$\\mathbb{R}$&#34;,
+                y=&#34;$\\mathbb{C}$&#34;,
+                **kwargs,
+            )
+        else:
+            fig.add_trace(go.Scatter(x=[self.a], y=[self.b], mode=&#34;markers&#34;, **kwargs))
+        return fig
+
+    @property
+    def a(self):
+        if str(self.__a) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__a
+
+    @a.setter
+    def a(self, value):
+        self.__a = value
+        self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
+
+    @property
+    def b(self):
+        if str(self.__b) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__b
+
+    @b.setter
+    def b(self, value):
+        self.__b = value
+        self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
+
+    @property
+    def r(self):
+        if str(self.__r) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__r
+
+    @r.setter
+    def r(self, value):
+        self.__r = value
+        self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
+
+    @property
+    def theta(self):
+        if str(self.__theta) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__theta
+
+    @theta.setter
+    def theta(self, value):
+        self.__theta = value
+        self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
+
+    @property
+    def mod(self) -&gt; float:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 4)
+        &gt;&gt;&gt; print(z.mod)
+        5.0
+        &gt;&gt;&gt; z = Complex(r=2, theta=5)
+        &gt;&gt;&gt; print(z.mod)
+        2.0
+        &#34;&#34;&#34;
+        return self.__abs__()
+
+    @property
+    def arg(self) -&gt; float:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 4)
+        &gt;&gt;&gt; print(z.arg)
+        0.9272952180016123
+        &gt;&gt;&gt; z = Complex(r=2, theta=5)
+        &gt;&gt;&gt; print(z.arg)
+        5.0
+        &#34;&#34;&#34;
+        return self.theta
+
+    # Comparison
+
+    def __eq__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; bool:
+        &#34;&#34;&#34;
+
+        Example
+        -------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=0.9272952180016123)
+        &gt;&gt;&gt; znumber == znumber2
+        True
+
+        &#34;&#34;&#34;
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            if self.a == other.a and self.b == other.b:
+                return True
+            if self.r == other.r and self.theta == other.theta:
+                return True
+        elif self.a == other:
+            return True
+        return False
+
+    def __ne__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; bool:
+        &#34;&#34;&#34;
+
+        Example
+        -------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=0.9272952180016123)
+        &gt;&gt;&gt; znumber != znumber2
+        False
+
+        &#34;&#34;&#34;
+        if not self.__eq__(other):
+            return True
+        return False
+
+    def __lt__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    def __gt__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    def __le__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    def __ge__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    # Unary arithmetic operators
+
+    def __pos__(self) -&gt; &#34;Complex&#34;:
+        return self
+
+    def __neg__(self) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; z2 = -znumber
+        &gt;&gt;&gt; print(z2)
+        -3.0 - 4.0i
+
+        &#34;&#34;&#34;
+        return Complex(a=-self.a, b=-self.b)
+
+    def __abs__(self) -&gt; float:
+        return self.r
+
+    def __round__(self, n: int = 0) -&gt; &#34;Complex&#34;:
+        return self.round(n=n)
+
+    def __floor__(self) -&gt; &#34;Complex&#34;:
+        return self.floor()
+
+    def __ceil__(self) -&gt; &#34;Complex&#34;:
+        return self.ceil()
+
+    def __trunc__(self) -&gt; &#34;Complex&#34;:
+        return self.trunc()
+
+    # Normal arithmetic operators
+
+    def __add__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(5, 6)
+        &gt;&gt;&gt; print(znumber + znumber2)
+        8.0 + 10.0i
+        &gt;&gt;&gt; znumber2 = &#34;5 + 6i&#34;
+        &gt;&gt;&gt; print(znumber + znumber2)
+        8.0 + 10.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print(znumber + znumber2)
+        8.0 + 4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.a = new.a + other.a
+            new.b = new.b + other.b
+        else:
+            new.a = new.a + other
+        return new
+
+    def __sub__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(5, 6)
+        &gt;&gt;&gt; print(znumber - znumber2)
+        -2.0 - 2.0i
+        &gt;&gt;&gt; znumber2 = &#34;5 + 6i&#34;
+        &gt;&gt;&gt; print(znumber - znumber2)
+        -2.0 - 2.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print(znumber - znumber2)
+        -2.0 + 4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.a = new.a - other.a
+            new.b = new.b - other.b
+        else:
+            new.a = new.a - other
+        return new
+
+    def __mul__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=6)
+        &gt;&gt;&gt; print((znumber * znumber2).to_string(&#34;exp&#34;))
+        15.0e^10.0i
+        &gt;&gt;&gt; znumber2 = &#34;5e^6i&#34;
+        &gt;&gt;&gt; print((znumber * znumber2).to_string(&#34;exp&#34;))
+        15.0e^10.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print((znumber * znumber2).to_string(&#34;exp&#34;))
+        15.0e^4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.r = new.r * other.r
+            new.theta = new.theta + other.theta
+        else:
+            new.r = new.r * other
+        return new
+
+    def __truediv__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=6)
+        &gt;&gt;&gt; print((znumber / znumber2).to_string(&#34;exp&#34;))
+        0.6e^-2.0i
+        &gt;&gt;&gt; znumber2 = &#34;5e^6i&#34;
+        &gt;&gt;&gt; print((znumber / znumber2).to_string(&#34;exp&#34;))
+        0.6e^-2.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print((znumber / znumber2).to_string(&#34;exp&#34;))
+        0.6e^4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.r = new.r / other.r
+            new.theta = new.theta - other.theta
+        else:
+            new.r = new.r / other
+        return new
+
+    def __pow__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=6)
+        &gt;&gt;&gt; print((znumber ** znumber2).to_string(&#34;exp&#34;))
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;Complex&#39;
+        &gt;&gt;&gt; znumber2 = &#34;5e^6i&#34;
+        &gt;&gt;&gt; print((znumber ** znumber2).to_string(&#34;exp&#34;))
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;str&#39;
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print((znumber ** znumber2).to_string(&#34;exp&#34;))
+        243.0e^20.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str) or isinstance(other, Complex):
+            return NotImplemented
+        new.r = new.r ** other
+        new.theta = new.theta * other
+        return new
+
+    # Reflected arithmetic operators
+
+    def __radd__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(1 + znumber)
+        4.0 + 4.0i
+
+        &#34;&#34;&#34;
+        return self + other
+
+    def __rsub__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(1 - znumber)
+        2.0 + 4.0i
+
+        &#34;&#34;&#34;
+        return self - other
+
+    def __rmul__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(2 * znumber)
+        6.0 + 8.0i
+
+        &#34;&#34;&#34;
+        return self * other
+
+    def __rtruediv__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(3 / znumber)
+        0.36 - 0.48i
+
+        &#34;&#34;&#34;
+        return self.conjugate * other / self.mod ** 2
+
+    def __rpow__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        return NotImplemented
+
+    # Augmented assignment
+
+    def __iadd__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber += Complex(5, 6)
+        &gt;&gt;&gt; print(znumber)
+        8.0 + 10.0i
+
+        &#34;&#34;&#34;
+        return self + other
+
+    def __isub__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber -= Complex(5, 6)
+        &gt;&gt;&gt; print(znumber)
+        -2.0 - 2.0i
+
+        &#34;&#34;&#34;
+        return self - other
+
+    def __imul__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber *= Complex(r=5, theta=6)
+        &gt;&gt;&gt; print(znumber.to_string(&#34;exp&#34;))
+        15.0e^10.0i
+
+        &#34;&#34;&#34;
+        return self * other
+
+    def __idiv__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber /= Complex(r=5, theta=6)
+        &gt;&gt;&gt; print(znumber.to_string(&#34;exp&#34;))
+        0.6e^-2.0i
+
+        &#34;&#34;&#34;
+        return self / other
+
+    def __ipow__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber **= Complex(r=5, theta=6)
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;Complex&#39;
+        &gt;&gt;&gt; znumber **= &#34;5e^6i&#34;
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;str&#39;
+        &gt;&gt;&gt; znumber **= 5
+        &gt;&gt;&gt; print(znumber.to_string(&#34;exp&#34;))
+        243.0e^20.0i
+
+        &#34;&#34;&#34;
+        return self ** other
+
+    def __copy__(self) -&gt; &#34;Complex&#34;:
+        return Complex(z=self)
+
+    def __setattr__(self, key, value):
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 4)
+        &gt;&gt;&gt; z.r
+        5.0
+        &gt;&gt;&gt; z.q = 2
+        Traceback (most recent call last):
+        ...
+        complex.ForbiddenAssignmentError: The Complex class does not allow for new attributes assignment
+        &gt;&gt;&gt; z.a = 4
+        &gt;&gt;&gt; z.r
+        5.656854249492381
+        &gt;&gt;&gt; z.__r = 4
+        Traceback (most recent call last):
+        ...
+        complex.ForbiddenAssignmentError: The Complex class does not allow for new attributes assignment
+        &#34;&#34;&#34;
+        if key not in ATTRIBUTES and key not in PROTECTED_ATTRIBUTES:
+            raise ForbiddenAssignmentError(&#34;The Complex class does not allow for new attributes assignment&#34;)
+        super().__setattr__(key, value)
+
+    __deepcopy__ = __copy__
+
+    # Internal methods
+
+    def _guess_repr(self) -&gt; None:
+        cartesian = False
+        trigo = False
+
+        if self.__a is not None and self.__b is not None:
+            cartesian = True
+        if self.__r is not None and self.__theta is not None:
+            trigo = True
+        if not cartesian and not trigo:
+            raise ValueError(&#34;Not enough information provided at Complex number creation.&#34;)
+
+        if cartesian:
+            r, theta = r_theta_from_ab(self.__a, self.__b)
+            if trigo:
+                # Do not set self.r and self.theta if trigo representation was found, since they were already specified
+                # by the user. Just check that those values are compatible with the given a and b
+                if not compatible_numbers(r, self.__r) or not compatible_numbers(theta, self.__theta):
+                    raise ValueError(
+                        &#34;You specified both cartesian and trigo representations but the values are not compatible&#34;
+                    )
+            else:
+                self.a = self.__a
+                self.b = self.__b
+        # If trigo, then not cartesian too. Set a and b.
+        else:
+            self.r = self.__r
+            self.theta = self.__theta
+
+    def _guess_repr_from_string(self, s) -&gt; None:
+        s = s.replace(&#34;(&#34;, &#34;&#34;)
+        s = s.replace(&#34;)&#34;, &#34;&#34;)
+        s = s.replace(&#34;*&#34;, &#34;&#34;)
+        s = s.replace(&#34;x&#34;, &#34;&#34;)
+        s = s.replace(&#34; &#34;, &#34;&#34;)
+        # TODO Add possibility to write something like &#39;3 x e^(i x pi / 4)&#39;
+        if &#34;e^&#34; in s or &#34;exp&#34; in s:
+            s = s.replace(&#34;i&#34;, &#34;&#34;)
+            if &#34;e^&#34; in s:
+                self.r = float(s.split(&#34;e^&#34;)[0])
+                self.theta = float(s.split(&#34;e^&#34;)[1])
+            else:
+                self.r = float(s.split(&#34;exp&#34;)[0])
+                self.theta = float(s.split(&#34;exp&#34;)[1])
+        elif &#34;cos&#34; in s or &#34;sin&#34; in s:
+            ss = s.split(&#34;+&#34;)[0].replace(&#34;i&#34;, &#34;&#34;)
+            if &#34;cos&#34; in ss:
+                self.r = float(ss.split(&#34;cos&#34;)[0])
+                self.theta = float(ss.split(&#34;cos&#34;)[1])
+            else:
+                self.r = float(ss.split(&#34;sn&#34;)[0])
+                self.theta = float(ss.split(&#34;sn&#34;)[1])
+        else:
+            if &#34;+&#34; not in s:
+                if &#34;i&#34; in s:
+                    self.a = 0.0
+                    self.b = float(s.replace(&#34;i&#34;, &#34;&#34;))
+                else:
+                    self.a = float(s)
+                    self.b = 0.0
+            else:
+                self.a = float(s.split(&#34;+&#34;)[0].replace(&#34; &#34;, &#34;&#34;))
+                self.b = float(s.split(&#34;+&#34;)[1].replace(&#34; &#34;, &#34;&#34;).replace(&#34;i&#34;, &#34;&#34;))
+
+
+i = Complex(0, 1)
+
+mathexp = math.exp
+
+
+def myexp(x) -&gt; Union[float, Complex]:
+    if isinstance(x, Complex):
+        return mathexp(x.a) * Complex(r=1, theta=x.b)
+    else:
+        return mathexp(x)
+
+
+math.exp = myexp
+
+mathlog = math.log
+
+
+def mylog(x: Union[SupportsFloat, Complex], base=None) -&gt; Union[float, Complex]:
+    if isinstance(x, Complex):
+        if base is None:
+            return mathlog(x.r) + i * x.theta
+        else:
+            return mathlog(x.r, base) + i * x.theta / mathlog(base)
+    else:
+        print(x)
+        if base is None:
+            return mathlog(x)
+        else:
+            return mathlog(x, base)
+
+
+math.log = mylog</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="complex.complex.ab_from_r_theta"><code class="name flex">
+<span>def <span class="ident">ab_from_r_theta</span></span>(<span>r: [<class 'float'>, None], theta: [<class 'float'>, None]) ‑> [typing.Tuple[float, float], typing.Tuple[NoneType, NoneType]]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ab_from_r_theta(r: [float, None], theta: [float, None]) -&gt; [Tuple[float, float], Tuple[None, None]]:
+    if r is None or theta is None:
+        return None, None
+    a = r * math.cos(theta)
+    b = r * math.sin(theta)
+    if abs(a) &lt; 1e-15:
+        a = 0.0
+    if abs(b) &lt; 1e-15:
+        b = 0.0
+    return a, b</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.compatible_numbers"><code class="name flex">
+<span>def <span class="ident">compatible_numbers</span></span>(<span>n1: float, n2: float, threshold: float = 1e-08) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns True of both numbers are equal or almost the same</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compatible_numbers(n1: float, n2: float, threshold: float = 1e-8) -&gt; bool:
+    &#34;&#34;&#34;Returns True of both numbers are equal or almost the same&#34;&#34;&#34;
+    if n1 == n2:
+        return True
+
+    if abs((n1 - n2) / n1) &lt; threshold:
+        return True
+
+    return False</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.myexp"><code class="name flex">
+<span>def <span class="ident">myexp</span></span>(<span>x) ‑> Union[float, <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a>]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def myexp(x) -&gt; Union[float, Complex]:
+    if isinstance(x, Complex):
+        return mathexp(x.a) * Complex(r=1, theta=x.b)
+    else:
+        return mathexp(x)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.mylog"><code class="name flex">
+<span>def <span class="ident">mylog</span></span>(<span>x: Union[SupportsFloat, <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a>], base=None) ‑> Union[float, <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a>]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mylog(x: Union[SupportsFloat, Complex], base=None) -&gt; Union[float, Complex]:
+    if isinstance(x, Complex):
+        if base is None:
+            return mathlog(x.r) + i * x.theta
+        else:
+            return mathlog(x.r, base) + i * x.theta / mathlog(base)
+    else:
+        print(x)
+        if base is None:
+            return mathlog(x)
+        else:
+            return mathlog(x, base)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.r_theta_from_ab"><code class="name flex">
+<span>def <span class="ident">r_theta_from_ab</span></span>(<span>a: Union[float, NoneType], b: [<class 'float'>, None]) ‑> [typing.Tuple[float, float], typing.Tuple[NoneType, NoneType]]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def r_theta_from_ab(a: Union[float, None], b: [float, None]) -&gt; [Tuple[float, float], Tuple[None, None]]:
+    if a is None or b is None:
+        return None, None
+    r = math.sqrt(a ** 2 + b ** 2)
+    if b &gt; 0:
+        theta = math.acos(a / r)
+    else:
+        theta = -math.acos(a / r)
+
+    if abs(theta) &lt; 1e-15:
+        theta = 0.0
+    return r, theta</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="complex.complex.Complex"><code class="flex name class">
+<span>class <span class="ident">Complex</span></span>
+<span>(</span><span>a: Union[float, ForwardRef('<a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a>')] = None, b: float = None, r: float = None, theta: float = None, s: str = None, z: <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a> = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(3, 4)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+5.0
+&gt;&gt;&gt; print(znumber.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(3, 4, 5, 0.9)
+Traceback (most recent call last):
+  ...
+ValueError: You specified both cartesian and trigo representations but the values are not compatible
+&gt;&gt;&gt; znumber = Complex(3, 4, 5, 0.9272952180016123)
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(r=5, theta=0.9272952180016123)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+5.0
+&gt;&gt;&gt; print(znumber.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;3+4i&quot;)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+5.0
+&gt;&gt;&gt; print(znumber.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;3&quot;)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+0.0
+&gt;&gt;&gt; print(znumber.r)
+3.0
+&gt;&gt;&gt; print(znumber.theta)
+0.0
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;4i&quot;)
+&gt;&gt;&gt; print(znumber.a)
+0.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+4.0
+&gt;&gt;&gt; print(znumber.theta)
+1.5707963267948966
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;3cos(0)&quot;)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+0.0
+&gt;&gt;&gt; print(znumber.r)
+3.0
+&gt;&gt;&gt; print(znumber.theta)
+0.0
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;4isin(1.5707963267948966)&quot;)
+&gt;&gt;&gt; print(znumber.a)
+0.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+4.0
+&gt;&gt;&gt; print(znumber.theta)
+1.5707963267948966
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # In case your string can not be a complex (here we would have two different r for instance),
+&gt;&gt;&gt; # it is the part in 'cos' that is used.
+&gt;&gt;&gt; znumber = Complex(s=&quot;3cos(4) + 4isin(1)&quot;)
+&gt;&gt;&gt; print(znumber.a)
+-1.960930862590836
+&gt;&gt;&gt; print(znumber.b)
+-2.2704074859237844
+&gt;&gt;&gt; print(znumber.r)
+3.0
+&gt;&gt;&gt; print(znumber.theta)
+4.0
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;3 + 4 * i&quot;)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+5.0
+&gt;&gt;&gt; print(znumber.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;5e^0.9272952180016123i&quot;)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+5.0
+&gt;&gt;&gt; print(znumber.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(s=&quot;5*(cos(0.9272952180016123i) + isin(0.9272952180016123i)&quot;)
+&gt;&gt;&gt; print(znumber.a)
+3.0
+&gt;&gt;&gt; print(znumber.b)
+4.0
+&gt;&gt;&gt; print(znumber.r)
+5.0
+&gt;&gt;&gt; print(znumber.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber_2 = Complex(z=znumber)
+&gt;&gt;&gt; print(znumber_2.a)
+3.0
+&gt;&gt;&gt; print(znumber_2.b)
+4.0
+&gt;&gt;&gt; print(znumber_2.r)
+5.0
+&gt;&gt;&gt; print(znumber_2.theta)
+0.9272952180016123
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber_2 = Complex(znumber)
+&gt;&gt;&gt; print(znumber_2.a)
+3.0
+&gt;&gt;&gt; print(znumber_2.b)
+4.0
+&gt;&gt;&gt; print(znumber_2.r)
+5.0
+&gt;&gt;&gt; print(znumber_2.theta)
+0.9272952180016123
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Complex:
+    def __init__(
+        self,
+        a: Union[float, &#34;Complex&#34;] = None,
+        b: float = None,
+        r: float = None,
+        theta: float = None,
+        s: str = None,
+        z: &#34;Complex&#34; = None,
+    ):
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(3, 4, 5, 0.9)
+        Traceback (most recent call last):
+          ...
+        ValueError: You specified both cartesian and trigo representations but the values are not compatible
+        &gt;&gt;&gt; znumber = Complex(3, 4, 5, 0.9272952180016123)
+
+        &gt;&gt;&gt; znumber = Complex(r=5, theta=0.9272952180016123)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3+4i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        0.0
+        &gt;&gt;&gt; print(znumber.r)
+        3.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.0
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;4i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        0.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        4.0
+        &gt;&gt;&gt; print(znumber.theta)
+        1.5707963267948966
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3cos(0)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        0.0
+        &gt;&gt;&gt; print(znumber.r)
+        3.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.0
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;4isin(1.5707963267948966)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        0.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        4.0
+        &gt;&gt;&gt; print(znumber.theta)
+        1.5707963267948966
+
+        &gt;&gt;&gt; # In case your string can not be a complex (here we would have two different r for instance),
+        &gt;&gt;&gt; # it is the part in &#39;cos&#39; that is used.
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3cos(4) + 4isin(1)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        -1.960930862590836
+        &gt;&gt;&gt; print(znumber.b)
+        -2.2704074859237844
+        &gt;&gt;&gt; print(znumber.r)
+        3.0
+        &gt;&gt;&gt; print(znumber.theta)
+        4.0
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;3 + 4 * i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;5e^0.9272952180016123i&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber = Complex(s=&#34;5*(cos(0.9272952180016123i) + isin(0.9272952180016123i)&#34;)
+        &gt;&gt;&gt; print(znumber.a)
+        3.0
+        &gt;&gt;&gt; print(znumber.b)
+        4.0
+        &gt;&gt;&gt; print(znumber.r)
+        5.0
+        &gt;&gt;&gt; print(znumber.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber_2 = Complex(z=znumber)
+        &gt;&gt;&gt; print(znumber_2.a)
+        3.0
+        &gt;&gt;&gt; print(znumber_2.b)
+        4.0
+        &gt;&gt;&gt; print(znumber_2.r)
+        5.0
+        &gt;&gt;&gt; print(znumber_2.theta)
+        0.9272952180016123
+
+        &gt;&gt;&gt; znumber_2 = Complex(znumber)
+        &gt;&gt;&gt; print(znumber_2.a)
+        3.0
+        &gt;&gt;&gt; print(znumber_2.b)
+        4.0
+        &gt;&gt;&gt; print(znumber_2.r)
+        5.0
+        &gt;&gt;&gt; print(znumber_2.theta)
+        0.9272952180016123
+
+        &#34;&#34;&#34;
+
+        if isinstance(a, Complex):
+            z = a
+            a = None
+            b = None
+            r = None
+            theta = None
+
+        if r is not None and r &lt; 0:
+            raise ValueError(&#34;A complex number&#39;s norm cannot be negative!&#34;)
+
+        self.__a = float(a) if a is not None else None
+        self.__b = float(b) if b is not None else None
+        self.__r = float(r) if r is not None else None
+        self.__theta = float(theta) if theta is not None else None
+
+        if z:
+            self.a = z.a
+            self.b = z.b
+            self.r = z.r
+            self.theta = z.theta
+        elif s:
+            self._guess_repr_from_string(s)
+        else:
+            self._guess_repr()
+
+    @property
+    def conjugate(self, repres: str = &#34;cartesian&#34;):
+        if repres == &#34;cartesian&#34;:
+            return Complex(self.a, -self.b)
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=self.r, theta=-self.theta)
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def __str__(self) -&gt; str:
+        return self.to_string()
+
+    def __repr__(self) -&gt; str:
+        return self.to_repr()
+
+    def to_string(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+        &#34;&#34;&#34; Human-readable str
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 3)
+        &gt;&gt;&gt; print(z)
+        3.0 + 3.0i
+        &gt;&gt;&gt; print(z.to_string(&#34;trigo&#34;))
+        4.242640687119285 * (cos(0.7853981633974483) + isin(0.7853981633974483))
+        &gt;&gt;&gt; print(z.to_string(&#34;exp&#34;))
+        4.242640687119285e^0.7853981633974483i
+
+        &#34;&#34;&#34;
+        bsign = &#34;+&#34; if self.b &gt; 0 else &#34;-&#34;
+        if repres == &#34;cartesian&#34;:
+            return f&#34;{self.a} {bsign} {abs(self.b)}i&#34;
+        elif repres == &#34;trigo&#34;:
+            return f&#34;{self.r} * (cos({self.theta}) + isin({self.theta}))&#34;
+        elif repres == &#34;exp&#34;:
+            return f&#34;{self.r}e^{self.theta}i&#34;
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def to_repr(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+        &#34;&#34;&#34; str readable by exec() or eval()
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 3)
+        &gt;&gt;&gt; print(repr(z))
+        3.0 + 3.0 * i
+        &gt;&gt;&gt; print(z.to_repr(&#34;trigo&#34;))
+        4.242640687119285 * (cos(0.7853981633974483) + i * sin(0.7853981633974483))
+        &gt;&gt;&gt; print(z.to_repr(&#34;exp&#34;))
+        4.242640687119285 * e ** (0.7853981633974483 * i)
+
+        &#34;&#34;&#34;
+        bsign = &#34;+&#34; if self.b &gt; 0 else &#34;-&#34;
+        if repres == &#34;cartesian&#34;:
+            return f&#34;{self.a} {bsign} {abs(self.b)} * i&#34;
+        elif repres == &#34;trigo&#34;:
+            return f&#34;{self.r} * (cos({self.theta}) + i * sin({self.theta}))&#34;
+        elif repres == &#34;exp&#34;:
+            return f&#34;{self.r} * e ** ({self.theta} * i)&#34;
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    # Class methods
+
+    def to_latex(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 3)
+        &gt;&gt;&gt; print(z.to_latex())
+        $3.0 + 3.0i$
+        &gt;&gt;&gt; print(z.to_latex(&#34;trigo&#34;))
+        $4.242640687119285 \\times (\\cos(0.7853981633974483) + i \\sin(0.7853981633974483))$
+        &gt;&gt;&gt; print(z.to_latex(&#34;exp&#34;))
+        $4.242640687119285 \\text{e}^{0.7853981633974483 i}$
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return f&#34;${self.a} + {self.b}i$&#34;
+        elif repres == &#34;trigo&#34;:
+            return f&#34;${self.r} \\times (\\cos({self.theta}) + i \\sin({self.theta}))$&#34;
+        elif repres == &#34;exp&#34;:
+            return f&#34;${self.r} \\text{{e}}^{{{self.theta} i}}$&#34;
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def round(self, n: int, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.round(n=2))
+        3.12 + 4.79i
+        &gt;&gt;&gt; print((znumber.round(n=2, repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        5.72e^0.99i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(round(self.a, n), round(self.b, n))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=round(self.r, n), theta=round(self.theta, n))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def ceil(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.ceil())
+        4.0 + 5.0i
+        &gt;&gt;&gt; print((znumber.ceil(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        6.0e^1.0i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(math.ceil(self.a), math.ceil(self.b))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=math.ceil(self.r), theta=math.ceil(self.theta))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def floor(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.floor())
+        3.0 + 4.0i
+        &gt;&gt;&gt; print((znumber.floor(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        5.0e^0.0i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(math.floor(self.a), math.floor(self.b))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=math.floor(self.r), theta=math.floor(self.theta))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def trunc(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+        &gt;&gt;&gt; print(znumber.trunc())
+        3.0 + 4.0i
+        &gt;&gt;&gt; print((znumber.trunc(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+        5.0e^0.0i
+
+        &#34;&#34;&#34;
+        if repres == &#34;cartesian&#34;:
+            return Complex(math.trunc(self.a), math.trunc(self.b))
+        elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+            return Complex(r=math.trunc(self.r), theta=math.trunc(self.theta))
+        else:
+            raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)
+
+    def plot(self, fig: Figure = None, **kwargs) -&gt; Figure:
+        if fig is None:
+            fig = px.scatter(
+                pd.DataFrame(columns=[&#34;$\\mathbb{R}$&#34;, &#34;$\\mathbb{C}$&#34;], data=[[self.a, self.b]]),
+                x=&#34;$\\mathbb{R}$&#34;,
+                y=&#34;$\\mathbb{C}$&#34;,
+                **kwargs,
+            )
+        else:
+            fig.add_trace(go.Scatter(x=[self.a], y=[self.b], mode=&#34;markers&#34;, **kwargs))
+        return fig
+
+    @property
+    def a(self):
+        if str(self.__a) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__a
+
+    @a.setter
+    def a(self, value):
+        self.__a = value
+        self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
+
+    @property
+    def b(self):
+        if str(self.__b) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__b
+
+    @b.setter
+    def b(self, value):
+        self.__b = value
+        self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
+
+    @property
+    def r(self):
+        if str(self.__r) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__r
+
+    @r.setter
+    def r(self, value):
+        self.__r = value
+        self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
+
+    @property
+    def theta(self):
+        if str(self.__theta) == &#34;-0.0&#34;:
+            return 0.0
+        return self.__theta
+
+    @theta.setter
+    def theta(self, value):
+        self.__theta = value
+        self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
+
+    @property
+    def mod(self) -&gt; float:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 4)
+        &gt;&gt;&gt; print(z.mod)
+        5.0
+        &gt;&gt;&gt; z = Complex(r=2, theta=5)
+        &gt;&gt;&gt; print(z.mod)
+        2.0
+        &#34;&#34;&#34;
+        return self.__abs__()
+
+    @property
+    def arg(self) -&gt; float:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 4)
+        &gt;&gt;&gt; print(z.arg)
+        0.9272952180016123
+        &gt;&gt;&gt; z = Complex(r=2, theta=5)
+        &gt;&gt;&gt; print(z.arg)
+        5.0
+        &#34;&#34;&#34;
+        return self.theta
+
+    # Comparison
+
+    def __eq__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; bool:
+        &#34;&#34;&#34;
+
+        Example
+        -------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=0.9272952180016123)
+        &gt;&gt;&gt; znumber == znumber2
+        True
+
+        &#34;&#34;&#34;
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            if self.a == other.a and self.b == other.b:
+                return True
+            if self.r == other.r and self.theta == other.theta:
+                return True
+        elif self.a == other:
+            return True
+        return False
+
+    def __ne__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; bool:
+        &#34;&#34;&#34;
+
+        Example
+        -------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=0.9272952180016123)
+        &gt;&gt;&gt; znumber != znumber2
+        False
+
+        &#34;&#34;&#34;
+        if not self.__eq__(other):
+            return True
+        return False
+
+    def __lt__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    def __gt__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    def __le__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    def __ge__(self, other) -&gt; bool:
+        raise ArithmeticError(&#34;Complex numbers can not be compared!&#34;)
+
+    # Unary arithmetic operators
+
+    def __pos__(self) -&gt; &#34;Complex&#34;:
+        return self
+
+    def __neg__(self) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; z2 = -znumber
+        &gt;&gt;&gt; print(z2)
+        -3.0 - 4.0i
+
+        &#34;&#34;&#34;
+        return Complex(a=-self.a, b=-self.b)
+
+    def __abs__(self) -&gt; float:
+        return self.r
+
+    def __round__(self, n: int = 0) -&gt; &#34;Complex&#34;:
+        return self.round(n=n)
+
+    def __floor__(self) -&gt; &#34;Complex&#34;:
+        return self.floor()
+
+    def __ceil__(self) -&gt; &#34;Complex&#34;:
+        return self.ceil()
+
+    def __trunc__(self) -&gt; &#34;Complex&#34;:
+        return self.trunc()
+
+    # Normal arithmetic operators
+
+    def __add__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(5, 6)
+        &gt;&gt;&gt; print(znumber + znumber2)
+        8.0 + 10.0i
+        &gt;&gt;&gt; znumber2 = &#34;5 + 6i&#34;
+        &gt;&gt;&gt; print(znumber + znumber2)
+        8.0 + 10.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print(znumber + znumber2)
+        8.0 + 4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.a = new.a + other.a
+            new.b = new.b + other.b
+        else:
+            new.a = new.a + other
+        return new
+
+    def __sub__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber2 = Complex(5, 6)
+        &gt;&gt;&gt; print(znumber - znumber2)
+        -2.0 - 2.0i
+        &gt;&gt;&gt; znumber2 = &#34;5 + 6i&#34;
+        &gt;&gt;&gt; print(znumber - znumber2)
+        -2.0 - 2.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print(znumber - znumber2)
+        -2.0 + 4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.a = new.a - other.a
+            new.b = new.b - other.b
+        else:
+            new.a = new.a - other
+        return new
+
+    def __mul__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=6)
+        &gt;&gt;&gt; print((znumber * znumber2).to_string(&#34;exp&#34;))
+        15.0e^10.0i
+        &gt;&gt;&gt; znumber2 = &#34;5e^6i&#34;
+        &gt;&gt;&gt; print((znumber * znumber2).to_string(&#34;exp&#34;))
+        15.0e^10.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print((znumber * znumber2).to_string(&#34;exp&#34;))
+        15.0e^4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.r = new.r * other.r
+            new.theta = new.theta + other.theta
+        else:
+            new.r = new.r * other
+        return new
+
+    def __truediv__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=6)
+        &gt;&gt;&gt; print((znumber / znumber2).to_string(&#34;exp&#34;))
+        0.6e^-2.0i
+        &gt;&gt;&gt; znumber2 = &#34;5e^6i&#34;
+        &gt;&gt;&gt; print((znumber / znumber2).to_string(&#34;exp&#34;))
+        0.6e^-2.0i
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print((znumber / znumber2).to_string(&#34;exp&#34;))
+        0.6e^4.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str):
+            other = Complex(s=other)
+        if isinstance(other, Complex):
+            new.r = new.r / other.r
+            new.theta = new.theta - other.theta
+        else:
+            new.r = new.r / other
+        return new
+
+    def __pow__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber2 = Complex(r=5, theta=6)
+        &gt;&gt;&gt; print((znumber ** znumber2).to_string(&#34;exp&#34;))
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;Complex&#39;
+        &gt;&gt;&gt; znumber2 = &#34;5e^6i&#34;
+        &gt;&gt;&gt; print((znumber ** znumber2).to_string(&#34;exp&#34;))
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;str&#39;
+        &gt;&gt;&gt; znumber2 = 5
+        &gt;&gt;&gt; print((znumber ** znumber2).to_string(&#34;exp&#34;))
+        243.0e^20.0i
+
+        &#34;&#34;&#34;
+        new = Complex(self)
+
+        if isinstance(other, str) or isinstance(other, Complex):
+            return NotImplemented
+        new.r = new.r ** other
+        new.theta = new.theta * other
+        return new
+
+    # Reflected arithmetic operators
+
+    def __radd__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(1 + znumber)
+        4.0 + 4.0i
+
+        &#34;&#34;&#34;
+        return self + other
+
+    def __rsub__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(1 - znumber)
+        2.0 + 4.0i
+
+        &#34;&#34;&#34;
+        return self - other
+
+    def __rmul__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(2 * znumber)
+        6.0 + 8.0i
+
+        &#34;&#34;&#34;
+        return self * other
+
+    def __rtruediv__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; print(3 / znumber)
+        0.36 - 0.48i
+
+        &#34;&#34;&#34;
+        return self.conjugate * other / self.mod ** 2
+
+    def __rpow__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        return NotImplemented
+
+    # Augmented assignment
+
+    def __iadd__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber += Complex(5, 6)
+        &gt;&gt;&gt; print(znumber)
+        8.0 + 10.0i
+
+        &#34;&#34;&#34;
+        return self + other
+
+    def __isub__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(3, 4)
+        &gt;&gt;&gt; znumber -= Complex(5, 6)
+        &gt;&gt;&gt; print(znumber)
+        -2.0 - 2.0i
+
+        &#34;&#34;&#34;
+        return self - other
+
+    def __imul__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber *= Complex(r=5, theta=6)
+        &gt;&gt;&gt; print(znumber.to_string(&#34;exp&#34;))
+        15.0e^10.0i
+
+        &#34;&#34;&#34;
+        return self * other
+
+    def __idiv__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber /= Complex(r=5, theta=6)
+        &gt;&gt;&gt; print(znumber.to_string(&#34;exp&#34;))
+        0.6e^-2.0i
+
+        &#34;&#34;&#34;
+        return self / other
+
+    def __ipow__(self, other: Union[int, float, &#34;Complex&#34;, str]) -&gt; &#34;Complex&#34;:
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; znumber = Complex(r=3, theta=4)
+        &gt;&gt;&gt; znumber **= Complex(r=5, theta=6)
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;Complex&#39;
+        &gt;&gt;&gt; znumber **= &#34;5e^6i&#34;
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;str&#39;
+        &gt;&gt;&gt; znumber **= 5
+        &gt;&gt;&gt; print(znumber.to_string(&#34;exp&#34;))
+        243.0e^20.0i
+
+        &#34;&#34;&#34;
+        return self ** other
+
+    def __copy__(self) -&gt; &#34;Complex&#34;:
+        return Complex(z=self)
+
+    def __setattr__(self, key, value):
+        &#34;&#34;&#34;
+
+        Examples
+        --------
+        &gt;&gt;&gt; z = Complex(3, 4)
+        &gt;&gt;&gt; z.r
+        5.0
+        &gt;&gt;&gt; z.q = 2
+        Traceback (most recent call last):
+        ...
+        complex.ForbiddenAssignmentError: The Complex class does not allow for new attributes assignment
+        &gt;&gt;&gt; z.a = 4
+        &gt;&gt;&gt; z.r
+        5.656854249492381
+        &gt;&gt;&gt; z.__r = 4
+        Traceback (most recent call last):
+        ...
+        complex.ForbiddenAssignmentError: The Complex class does not allow for new attributes assignment
+        &#34;&#34;&#34;
+        if key not in ATTRIBUTES and key not in PROTECTED_ATTRIBUTES:
+            raise ForbiddenAssignmentError(&#34;The Complex class does not allow for new attributes assignment&#34;)
+        super().__setattr__(key, value)
+
+    __deepcopy__ = __copy__
+
+    # Internal methods
+
+    def _guess_repr(self) -&gt; None:
+        cartesian = False
+        trigo = False
+
+        if self.__a is not None and self.__b is not None:
+            cartesian = True
+        if self.__r is not None and self.__theta is not None:
+            trigo = True
+        if not cartesian and not trigo:
+            raise ValueError(&#34;Not enough information provided at Complex number creation.&#34;)
+
+        if cartesian:
+            r, theta = r_theta_from_ab(self.__a, self.__b)
+            if trigo:
+                # Do not set self.r and self.theta if trigo representation was found, since they were already specified
+                # by the user. Just check that those values are compatible with the given a and b
+                if not compatible_numbers(r, self.__r) or not compatible_numbers(theta, self.__theta):
+                    raise ValueError(
+                        &#34;You specified both cartesian and trigo representations but the values are not compatible&#34;
+                    )
+            else:
+                self.a = self.__a
+                self.b = self.__b
+        # If trigo, then not cartesian too. Set a and b.
+        else:
+            self.r = self.__r
+            self.theta = self.__theta
+
+    def _guess_repr_from_string(self, s) -&gt; None:
+        s = s.replace(&#34;(&#34;, &#34;&#34;)
+        s = s.replace(&#34;)&#34;, &#34;&#34;)
+        s = s.replace(&#34;*&#34;, &#34;&#34;)
+        s = s.replace(&#34;x&#34;, &#34;&#34;)
+        s = s.replace(&#34; &#34;, &#34;&#34;)
+        # TODO Add possibility to write something like &#39;3 x e^(i x pi / 4)&#39;
+        if &#34;e^&#34; in s or &#34;exp&#34; in s:
+            s = s.replace(&#34;i&#34;, &#34;&#34;)
+            if &#34;e^&#34; in s:
+                self.r = float(s.split(&#34;e^&#34;)[0])
+                self.theta = float(s.split(&#34;e^&#34;)[1])
+            else:
+                self.r = float(s.split(&#34;exp&#34;)[0])
+                self.theta = float(s.split(&#34;exp&#34;)[1])
+        elif &#34;cos&#34; in s or &#34;sin&#34; in s:
+            ss = s.split(&#34;+&#34;)[0].replace(&#34;i&#34;, &#34;&#34;)
+            if &#34;cos&#34; in ss:
+                self.r = float(ss.split(&#34;cos&#34;)[0])
+                self.theta = float(ss.split(&#34;cos&#34;)[1])
+            else:
+                self.r = float(ss.split(&#34;sn&#34;)[0])
+                self.theta = float(ss.split(&#34;sn&#34;)[1])
+        else:
+            if &#34;+&#34; not in s:
+                if &#34;i&#34; in s:
+                    self.a = 0.0
+                    self.b = float(s.replace(&#34;i&#34;, &#34;&#34;))
+                else:
+                    self.a = float(s)
+                    self.b = 0.0
+            else:
+                self.a = float(s.split(&#34;+&#34;)[0].replace(&#34; &#34;, &#34;&#34;))
+                self.b = float(s.split(&#34;+&#34;)[1].replace(&#34; &#34;, &#34;&#34;).replace(&#34;i&#34;, &#34;&#34;))</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="complex.complex.Complex.a"><code class="name">var <span class="ident">a</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def a(self):
+    if str(self.__a) == &#34;-0.0&#34;:
+        return 0.0
+    return self.__a</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.arg"><code class="name">var <span class="ident">arg</span> : float</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; z = Complex(3, 4)
+&gt;&gt;&gt; print(z.arg)
+0.9272952180016123
+&gt;&gt;&gt; z = Complex(r=2, theta=5)
+&gt;&gt;&gt; print(z.arg)
+5.0
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def arg(self) -&gt; float:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; z = Complex(3, 4)
+    &gt;&gt;&gt; print(z.arg)
+    0.9272952180016123
+    &gt;&gt;&gt; z = Complex(r=2, theta=5)
+    &gt;&gt;&gt; print(z.arg)
+    5.0
+    &#34;&#34;&#34;
+    return self.theta</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.b"><code class="name">var <span class="ident">b</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def b(self):
+    if str(self.__b) == &#34;-0.0&#34;:
+        return 0.0
+    return self.__b</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.conjugate"><code class="name">var <span class="ident">conjugate</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def conjugate(self, repres: str = &#34;cartesian&#34;):
+    if repres == &#34;cartesian&#34;:
+        return Complex(self.a, -self.b)
+    elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+        return Complex(r=self.r, theta=-self.theta)
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.mod"><code class="name">var <span class="ident">mod</span> : float</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; z = Complex(3, 4)
+&gt;&gt;&gt; print(z.mod)
+5.0
+&gt;&gt;&gt; z = Complex(r=2, theta=5)
+&gt;&gt;&gt; print(z.mod)
+2.0
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def mod(self) -&gt; float:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; z = Complex(3, 4)
+    &gt;&gt;&gt; print(z.mod)
+    5.0
+    &gt;&gt;&gt; z = Complex(r=2, theta=5)
+    &gt;&gt;&gt; print(z.mod)
+    2.0
+    &#34;&#34;&#34;
+    return self.__abs__()</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.r"><code class="name">var <span class="ident">r</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def r(self):
+    if str(self.__r) == &#34;-0.0&#34;:
+        return 0.0
+    return self.__r</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.theta"><code class="name">var <span class="ident">theta</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def theta(self):
+    if str(self.__theta) == &#34;-0.0&#34;:
+        return 0.0
+    return self.__theta</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="complex.complex.Complex.ceil"><code class="name flex">
+<span>def <span class="ident">ceil</span></span>(<span>self, repres: str = 'cartesian') ‑> <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a></span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+&gt;&gt;&gt; print(znumber.ceil())
+4.0 + 5.0i
+&gt;&gt;&gt; print((znumber.ceil(repres=&quot;exp&quot;)).to_string(&quot;exp&quot;))
+6.0e^1.0i
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ceil(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+    &gt;&gt;&gt; print(znumber.ceil())
+    4.0 + 5.0i
+    &gt;&gt;&gt; print((znumber.ceil(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+    6.0e^1.0i
+
+    &#34;&#34;&#34;
+    if repres == &#34;cartesian&#34;:
+        return Complex(math.ceil(self.a), math.ceil(self.b))
+    elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+        return Complex(r=math.ceil(self.r), theta=math.ceil(self.theta))
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.floor"><code class="name flex">
+<span>def <span class="ident">floor</span></span>(<span>self, repres: str = 'cartesian') ‑> <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a></span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+&gt;&gt;&gt; print(znumber.floor())
+3.0 + 4.0i
+&gt;&gt;&gt; print((znumber.floor(repres=&quot;exp&quot;)).to_string(&quot;exp&quot;))
+5.0e^0.0i
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def floor(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+    &gt;&gt;&gt; print(znumber.floor())
+    3.0 + 4.0i
+    &gt;&gt;&gt; print((znumber.floor(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+    5.0e^0.0i
+
+    &#34;&#34;&#34;
+    if repres == &#34;cartesian&#34;:
+        return Complex(math.floor(self.a), math.floor(self.b))
+    elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+        return Complex(r=math.floor(self.r), theta=math.floor(self.theta))
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.plot"><code class="name flex">
+<span>def <span class="ident">plot</span></span>(<span>self, fig: plotly.graph_objs._figure.Figure = None, **kwargs) ‑> plotly.graph_objs._figure.Figure</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot(self, fig: Figure = None, **kwargs) -&gt; Figure:
+    if fig is None:
+        fig = px.scatter(
+            pd.DataFrame(columns=[&#34;$\\mathbb{R}$&#34;, &#34;$\\mathbb{C}$&#34;], data=[[self.a, self.b]]),
+            x=&#34;$\\mathbb{R}$&#34;,
+            y=&#34;$\\mathbb{C}$&#34;,
+            **kwargs,
+        )
+    else:
+        fig.add_trace(go.Scatter(x=[self.a], y=[self.b], mode=&#34;markers&#34;, **kwargs))
+    return fig</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.round"><code class="name flex">
+<span>def <span class="ident">round</span></span>(<span>self, n: int, repres: str = 'cartesian') ‑> <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a></span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+&gt;&gt;&gt; print(znumber.round(n=2))
+3.12 + 4.79i
+&gt;&gt;&gt; print((znumber.round(n=2, repres=&quot;exp&quot;)).to_string(&quot;exp&quot;))
+5.72e^0.99i
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def round(self, n: int, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+    &gt;&gt;&gt; print(znumber.round(n=2))
+    3.12 + 4.79i
+    &gt;&gt;&gt; print((znumber.round(n=2, repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+    5.72e^0.99i
+
+    &#34;&#34;&#34;
+    if repres == &#34;cartesian&#34;:
+        return Complex(round(self.a, n), round(self.b, n))
+    elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+        return Complex(r=round(self.r, n), theta=round(self.theta, n))
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.to_latex"><code class="name flex">
+<span>def <span class="ident">to_latex</span></span>(<span>self, repres: str = 'cartesian') ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; z = Complex(3, 3)
+&gt;&gt;&gt; print(z.to_latex())
+$3.0 + 3.0i$
+&gt;&gt;&gt; print(z.to_latex(&quot;trigo&quot;))
+$4.242640687119285 \times (\cos(0.7853981633974483) + i \sin(0.7853981633974483))$
+&gt;&gt;&gt; print(z.to_latex(&quot;exp&quot;))
+$4.242640687119285 \text{e}^{0.7853981633974483 i}$
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_latex(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; z = Complex(3, 3)
+    &gt;&gt;&gt; print(z.to_latex())
+    $3.0 + 3.0i$
+    &gt;&gt;&gt; print(z.to_latex(&#34;trigo&#34;))
+    $4.242640687119285 \\times (\\cos(0.7853981633974483) + i \\sin(0.7853981633974483))$
+    &gt;&gt;&gt; print(z.to_latex(&#34;exp&#34;))
+    $4.242640687119285 \\text{e}^{0.7853981633974483 i}$
+
+    &#34;&#34;&#34;
+    if repres == &#34;cartesian&#34;:
+        return f&#34;${self.a} + {self.b}i$&#34;
+    elif repres == &#34;trigo&#34;:
+        return f&#34;${self.r} \\times (\\cos({self.theta}) + i \\sin({self.theta}))$&#34;
+    elif repres == &#34;exp&#34;:
+        return f&#34;${self.r} \\text{{e}}^{{{self.theta} i}}$&#34;
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.to_repr"><code class="name flex">
+<span>def <span class="ident">to_repr</span></span>(<span>self, repres: str = 'cartesian') ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>str readable by exec() or eval()</p>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; z = Complex(3, 3)
+&gt;&gt;&gt; print(repr(z))
+3.0 + 3.0 * i
+&gt;&gt;&gt; print(z.to_repr(&quot;trigo&quot;))
+4.242640687119285 * (cos(0.7853981633974483) + i * sin(0.7853981633974483))
+&gt;&gt;&gt; print(z.to_repr(&quot;exp&quot;))
+4.242640687119285 * e ** (0.7853981633974483 * i)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_repr(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+    &#34;&#34;&#34; str readable by exec() or eval()
+
+    Examples
+    --------
+    &gt;&gt;&gt; z = Complex(3, 3)
+    &gt;&gt;&gt; print(repr(z))
+    3.0 + 3.0 * i
+    &gt;&gt;&gt; print(z.to_repr(&#34;trigo&#34;))
+    4.242640687119285 * (cos(0.7853981633974483) + i * sin(0.7853981633974483))
+    &gt;&gt;&gt; print(z.to_repr(&#34;exp&#34;))
+    4.242640687119285 * e ** (0.7853981633974483 * i)
+
+    &#34;&#34;&#34;
+    bsign = &#34;+&#34; if self.b &gt; 0 else &#34;-&#34;
+    if repres == &#34;cartesian&#34;:
+        return f&#34;{self.a} {bsign} {abs(self.b)} * i&#34;
+    elif repres == &#34;trigo&#34;:
+        return f&#34;{self.r} * (cos({self.theta}) + i * sin({self.theta}))&#34;
+    elif repres == &#34;exp&#34;:
+        return f&#34;{self.r} * e ** ({self.theta} * i)&#34;
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.to_string"><code class="name flex">
+<span>def <span class="ident">to_string</span></span>(<span>self, repres: str = 'cartesian') ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Human-readable str</p>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; z = Complex(3, 3)
+&gt;&gt;&gt; print(z)
+3.0 + 3.0i
+&gt;&gt;&gt; print(z.to_string(&quot;trigo&quot;))
+4.242640687119285 * (cos(0.7853981633974483) + isin(0.7853981633974483))
+&gt;&gt;&gt; print(z.to_string(&quot;exp&quot;))
+4.242640687119285e^0.7853981633974483i
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_string(self, repres: str = &#34;cartesian&#34;) -&gt; str:
+    &#34;&#34;&#34; Human-readable str
+
+    Examples
+    --------
+    &gt;&gt;&gt; z = Complex(3, 3)
+    &gt;&gt;&gt; print(z)
+    3.0 + 3.0i
+    &gt;&gt;&gt; print(z.to_string(&#34;trigo&#34;))
+    4.242640687119285 * (cos(0.7853981633974483) + isin(0.7853981633974483))
+    &gt;&gt;&gt; print(z.to_string(&#34;exp&#34;))
+    4.242640687119285e^0.7853981633974483i
+
+    &#34;&#34;&#34;
+    bsign = &#34;+&#34; if self.b &gt; 0 else &#34;-&#34;
+    if repres == &#34;cartesian&#34;:
+        return f&#34;{self.a} {bsign} {abs(self.b)}i&#34;
+    elif repres == &#34;trigo&#34;:
+        return f&#34;{self.r} * (cos({self.theta}) + isin({self.theta}))&#34;
+    elif repres == &#34;exp&#34;:
+        return f&#34;{self.r}e^{self.theta}i&#34;
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+<dt id="complex.complex.Complex.trunc"><code class="name flex">
+<span>def <span class="ident">trunc</span></span>(<span>self, repres: str = 'cartesian') ‑> <a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a></span>
+</code></dt>
+<dd>
+<div class="desc"><h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+&gt;&gt;&gt; print(znumber.trunc())
+3.0 + 4.0i
+&gt;&gt;&gt; print((znumber.trunc(repres=&quot;exp&quot;)).to_string(&quot;exp&quot;))
+5.0e^0.0i
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def trunc(self, repres: str = &#34;cartesian&#34;) -&gt; &#34;Complex&#34;:
+    &#34;&#34;&#34;
+
+    Examples
+    --------
+    &gt;&gt;&gt; znumber = Complex(3.123456, 4.789101112)
+    &gt;&gt;&gt; print(znumber.trunc())
+    3.0 + 4.0i
+    &gt;&gt;&gt; print((znumber.trunc(repres=&#34;exp&#34;)).to_string(&#34;exp&#34;))
+    5.0e^0.0i
+
+    &#34;&#34;&#34;
+    if repres == &#34;cartesian&#34;:
+        return Complex(math.trunc(self.a), math.trunc(self.b))
+    elif repres == &#34;trigo&#34; or repres == &#34;exp&#34;:
+        return Complex(r=math.trunc(self.r), theta=math.trunc(self.theta))
+    else:
+        raise ValueError(f&#34;Unknown representation {repres}. Possibilities are &#39;cartesian&#39;, &#39;trigo&#39; or &#39;expo&#39;&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="complex.complex.ForbiddenAssignmentError"><code class="flex name class">
+<span>class <span class="ident">ForbiddenAssignmentError</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ForbiddenAssignmentError(Exception):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="complex" href="index.html">complex</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="complex.complex.ab_from_r_theta" href="#complex.complex.ab_from_r_theta">ab_from_r_theta</a></code></li>
+<li><code><a title="complex.complex.compatible_numbers" href="#complex.complex.compatible_numbers">compatible_numbers</a></code></li>
+<li><code><a title="complex.complex.myexp" href="#complex.complex.myexp">myexp</a></code></li>
+<li><code><a title="complex.complex.mylog" href="#complex.complex.mylog">mylog</a></code></li>
+<li><code><a title="complex.complex.r_theta_from_ab" href="#complex.complex.r_theta_from_ab">r_theta_from_ab</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="complex.complex.Complex" href="#complex.complex.Complex">Complex</a></code></h4>
+<ul class="two-column">
+<li><code><a title="complex.complex.Complex.a" href="#complex.complex.Complex.a">a</a></code></li>
+<li><code><a title="complex.complex.Complex.arg" href="#complex.complex.Complex.arg">arg</a></code></li>
+<li><code><a title="complex.complex.Complex.b" href="#complex.complex.Complex.b">b</a></code></li>
+<li><code><a title="complex.complex.Complex.ceil" href="#complex.complex.Complex.ceil">ceil</a></code></li>
+<li><code><a title="complex.complex.Complex.conjugate" href="#complex.complex.Complex.conjugate">conjugate</a></code></li>
+<li><code><a title="complex.complex.Complex.floor" href="#complex.complex.Complex.floor">floor</a></code></li>
+<li><code><a title="complex.complex.Complex.mod" href="#complex.complex.Complex.mod">mod</a></code></li>
+<li><code><a title="complex.complex.Complex.plot" href="#complex.complex.Complex.plot">plot</a></code></li>
+<li><code><a title="complex.complex.Complex.r" href="#complex.complex.Complex.r">r</a></code></li>
+<li><code><a title="complex.complex.Complex.round" href="#complex.complex.Complex.round">round</a></code></li>
+<li><code><a title="complex.complex.Complex.theta" href="#complex.complex.Complex.theta">theta</a></code></li>
+<li><code><a title="complex.complex.Complex.to_latex" href="#complex.complex.Complex.to_latex">to_latex</a></code></li>
+<li><code><a title="complex.complex.Complex.to_repr" href="#complex.complex.Complex.to_repr">to_repr</a></code></li>
+<li><code><a title="complex.complex.Complex.to_string" href="#complex.complex.Complex.to_string">to_string</a></code></li>
+<li><code><a title="complex.complex.Complex.trunc" href="#complex.complex.Complex.trunc">trunc</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="complex.complex.ForbiddenAssignmentError" href="#complex.complex.ForbiddenAssignmentError">ForbiddenAssignmentError</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
