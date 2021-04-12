@@ -1,6 +1,7 @@
 import subprocess
 from pathlib import Path
 from typing import List
+import os
 
 from setuptools import find_packages, setup
 
@@ -38,7 +39,7 @@ def get_greatest_version(versions: List[str]) -> str:
                     break
             if not lower:
                 greatest = v
-    return f"v{'.'.join([str(s) for s in greatest])}"
+    return f"v{'.'.join([str(s_) for s_ in greatest])}"
 
 
 def get_last_tag() -> str:
@@ -57,6 +58,8 @@ def get_version() -> str:
     last_tag = get_last_tag()
     return f"{'.'.join(last_tag.split('.'))}.{get_nb_commits_until(last_tag)}"
 
+
+git_installed = subprocess.call('command -v git >> /dev/null', shell=True)
 
 try:
     long_description = Path("README.md").read_text()
@@ -81,16 +84,21 @@ for afile in Path("").glob("*requirements.txt"):
 if len(optional_requirements) > 0:
     optional_requirements["all"] = all_reqs
 
-try:
-    version = get_version()
-    with open("VERSION.txt", "w") as vfile:
-        vfile.write(version)
-except FileNotFoundError as e:
+
+version = None
+if git_installed == 0:
+    try:
+        version = get_version()
+        with open("VERSION.txt", "w") as vfile:
+            vfile.write(version)
+    except FileNotFoundError as e:
+        pass
+if version is None:
     # noinspection PyBroadException
     try:
         with open("VERSION.txt", "r") as vfile:
             version = vfile.readline()
-    except Exception:
+    except:
         version = None
 
 
@@ -118,23 +126,34 @@ if __name__ == "__main__":
         python_requires='>=3.7',
     )
 
+    print("")
+    print("Managin apt-requirements.txt...")
     if Path("apt-requirements.txt").is_file():
-        apt_requirements = Path("apt-requirements.txt").read_text().splitlines()
-        print("WARNING: Found apt-requirements.txt. You will have to install by hand its content :")
-        for line in apt_requirements:
-            print(" - ", line)
-        print("If you are using Linux, you can use apt-get install or equivalent to install those packages. Else,"
-              "download and install them according to your OS.")
-        print("If you are using Linux and used install.sh to install this package, you can ignore this message,"
-              "the requirements have been installed.")
+        try:
+            os.system("chmod +x install-apt.sh && ./install-apt.sh")
+        except:
+            apt_requirements = Path("apt-requirements.txt").read_text().splitlines()
+            s = "WARNING: Found apt-requirements.txt and could not install its content. You will have to install it " \
+                "by hand :"
+            s = " - ".join([s] + apt_requirements)
+            s = "\n".join([s, "If you are using Linux, you can use apt-get install or equivalent to install those "
+                              "packages. Else, download and install them according to your OS."])
+            raise ValueError(s)
+    else:
+        print("...nothing to do.")
 
+    print("")
+    print("Managin gspip-requirements.txt...")
     if Path("gspip-requirements.txt").is_file():
-        gspip_requirements = Path("gspip-requirements.txt").read_text().splitlines()
-        print("WARNING: Found gspip-requirements.txt. You will have to install from gcs its content :")
-        for line in gspip_requirements:
-            print(" - ", line)
-        print("If you are using Linux, install and use gspip from https://github.com/Advestis/gspip. On windows,"
-              "you will have to download by hand the latest version of the required packages on"
-              " gs://pypi_server_sand/package_name")
-        print("If you are using Linux and used install.sh to install this package, you can ignore this message,"
-              "the requirements have been installed.")
+        try:
+            os.system("chmod +x install-gspip.sh && ./install-gspip.sh")
+        except:
+            gspip_requirements = Path("gspip-requirements.txt").read_text().splitlines()
+            s = "Found gspip-requirements.txt and could not install its content. You will have to install it from gcs :"
+            s = " - ".join([s] + gspip_requirements)
+            s = "\n".join([s, "If you are using Linux, install and use gspip from https://github.com/Advestis/gspip. "
+                              "On windows, you will have to download by hand the latest version of the required "
+                              "packages on  gs://pypi_server_prod/package_name"])
+            raise ValueError(s)
+    else:
+        print("...nothing to do.")
