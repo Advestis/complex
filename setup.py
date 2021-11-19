@@ -93,7 +93,6 @@ if __name__ == "__main__":
     if sys.argv[1] == "version":
         exit(0)
 
-
     setup(
         name=name,
         version=version,
