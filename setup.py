@@ -1,15 +1,16 @@
 import subprocess
 from pathlib import Path
 from typing import List
-import os
+import sys
 
 from setuptools import find_packages, setup
 
+workdir = Path(__file__).parent
 
 name = Path(__file__).absolute().parent.stem
 author = "Philippe COTTE"
 author_email = "pcotte@advestis.com"
-description = "A class implementing the notion of complex number"
+description = "A package doing simulated and quantum annealing"
 url = f"https://github.com/Advestis/{name}"
 
 
@@ -62,47 +63,37 @@ def get_version() -> str:
 git_installed = subprocess.call('command -v git >> /dev/null', shell=True)
 
 try:
-    long_description = Path("README.md").read_text()
+    long_description = (workdir / "README.md").read_text()
 except UnicodeDecodeError:
-    with open("README.md", "rb") as ifile:
+    with open(str(workdir / "README.md"), "rb") as ifile:
         lines = [line.decode("utf-8") for line in ifile.readlines()]
         long_description = "".join(lines)
 
-optional_requirements = {}
-requirements = []
-all_reqs = []
-
-for afile in Path("").glob("*requirements.txt"):
-    if str(afile) == "requirements.txt":
-        requirements = afile.read_text().splitlines()
-        all_reqs = list(set(all_reqs) | set(afile.read_text().splitlines()))
-    else:
-        option = afile.stem.replace("-requirements", "")
-        optional_requirements[option] = afile.read_text().splitlines()
-        all_reqs = list(set(all_reqs) | set(optional_requirements[option]))
-
-if len(optional_requirements) > 0:
-    optional_requirements["all"] = all_reqs
-
+requirements = (workdir / "requirements.txt").read_text().splitlines()
 
 version = None
 if git_installed == 0:
     try:
         version = get_version()
-        with open("VERSION.txt", "w") as vfile:
+        with open(str(workdir / "VERSION.txt"), "w") as vfile:
             vfile.write(version)
     except FileNotFoundError as e:
         pass
 if version is None:
     # noinspection PyBroadException
     try:
-        with open("VERSION.txt", "r") as vfile:
+        with open(str(workdir / "VERSION.txt"), "r") as vfile:
             version = vfile.readline()
-    except:
+    except Exception:
         version = None
 
 
 if __name__ == "__main__":
+
+    if sys.argv[1] == "version":
+        exit(0)
+
+
     setup(
         name=name,
         version=version,
@@ -125,33 +116,3 @@ if __name__ == "__main__":
         ],
         python_requires='>=3.7',
     )
-
-    print("")
-    print("Managin apt-requirements.txt...")
-    if Path("apt-requirements.txt").is_file():
-        _ = os.system("chmod +x install-apt.sh && ./install-apt.sh")
-        if _ != 0:
-            apt_requirements = Path("apt-requirements.txt").read_text().splitlines()
-            s = "WARNING: Found apt-requirements.txt and could not install its content. You will have to install it " \
-                "by hand :"
-            s = " - ".join([s] + apt_requirements)
-            s = "\n".join([s, "If you are using Linux, you can use apt-get install or equivalent to install those "
-                              "packages. Else, download and install them according to your OS."])
-            raise ValueError(s)
-    else:
-        print("...nothing to do.")
-
-    print("")
-    print("Managin gspip-requirements.txt...")
-    if Path("gspip-requirements.txt").is_file():
-        _ = os.system("chmod +x install-gspip.sh && ./install-gspip.sh")
-        if _ != 0:
-            gspip_requirements = Path("gspip-requirements.txt").read_text().splitlines()
-            s = "Found gspip-requirements.txt and could not install its content. You will have to install it from gcs :"
-            s = " - ".join([s] + gspip_requirements)
-            s = "\n".join([s, "If you are using Linux, install and use gspip from https://github.com/Advestis/gspip. "
-                              "On windows, you will have to download by hand the latest version of the required "
-                              "packages on  gs://pypi_server_prod/package_name"])
-            raise ValueError(s)
-    else:
-        print("...nothing to do.")
