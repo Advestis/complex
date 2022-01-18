@@ -1089,6 +1089,7 @@ class Complex:
 
 
 i = Complex(0, 1)
+"""The pure imaginary number"""
 
 mathexp = math.exp
 
