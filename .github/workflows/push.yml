@@ -10,7 +10,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'VERSION-SKIP-CI')"
     strategy:
       matrix:
-        python-version: [ 3.7, 3.8 ]
+        python-version: [ 3.9 ]
     steps:
 
       # extract repo name
@@ -31,19 +31,17 @@ jobs:
 
       - name: build
         run: |
-          make install
+          pip install .
           python setup.py sdist
 
       - name: commit version
         run: |
-          git add VERSION.txt
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "VERSION-SKIP-CI"
 
       - name: Push version
-        if: ${{ matrix.python-version == 3.8 }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ORG_TOKEN_CICD }}
@@ -51,7 +49,11 @@ jobs:
           force: true
 
       - name: make doc
-        run: make doc
+        run: |
+          pip install pdoc3
+          pdoc --html ifra -o docs
+          mv docs/ifra/* docs/
+          rm -r docs/ifra
 
       - name: commit doc
         run: |
@@ -61,15 +63,13 @@ jobs:
           git commit -m "docs"
 
       - name: Push doc
-        if: ${{ matrix.python-version == 3.8 }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ORG_TOKEN_CICD }}
           branch: "gh-pages"
           force: true
-
+#
 #      - name: topypi
-#        if: ${{ matrix.python-version == 3.8 }}
 #        uses: pypa/gh-action-pypi-publish@master
 #        with:
 #          user: ${{ secrets.ORG_PYPI_LOGIN }}

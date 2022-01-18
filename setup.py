@@ -10,7 +10,7 @@ workdir = Path(__file__).parent
 name = Path(__file__).absolute().parent.stem
 author = "Philippe COTTE"
 author_email = "pcotte@advestis.com"
-description = "A package doing simulated and quantum annealing"
+description = "A package implementing the notion of complex number"
 url = f"https://github.com/Advestis/{name}"
 
 
@@ -75,15 +75,15 @@ version = None
 if git_installed == 0:
     try:
         version = get_version()
-        with open(str(workdir / "VERSION.txt"), "w") as vfile:
-            vfile.write(version)
+        with open(str(workdir / name / "_version.py"), "w") as vfile:
+            vfile.write(f"__version__ = '{version}'")
     except FileNotFoundError as e:
         pass
 if version is None:
     # noinspection PyBroadException
     try:
-        with open(str(workdir / "VERSION.txt"), "r") as vfile:
-            version = vfile.readline()
+        with open(str(workdir / name / "_version.py"), "r") as vfile:
+            version = vfile.readline().split("= ")[-1]
     except Exception:
         version = None
 
