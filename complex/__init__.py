@@ -1,6 +1,8 @@
 """Implementation of the notion of complex number
 
->>> from complex import Complex
+>>> from complex import Complex, i
+>>> print(i)
+0.0 + 1.0i
 >>> znumber = Complex(3, 4)
 >>> znumber_fromstring = Complex(s="3+4i")
 >>> znumber_fromstring_cos = Complex(s="3cos(4) + 4isin(1)")
