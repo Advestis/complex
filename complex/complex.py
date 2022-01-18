@@ -3,7 +3,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 from plotly.graph_objs import Figure
-from typing import Union, Tuple, SupportsFloat
+from typing import Union, Tuple, SupportsFloat, Optional
 
 
 class ForbiddenAssignmentError(Exception):
@@ -16,7 +16,7 @@ CARTESIAN_ATTRIBUTES = ["a", "b"]
 
 
 def compatible_numbers(n1: float, n2: float, threshold: float = 1e-8) -> bool:
-    """Returns True of both numbers are equal or almost the same"""
+    """Returns True if both numbers are equal or almost the same"""
     if n1 == n2:
         return True
 
@@ -26,9 +26,22 @@ def compatible_numbers(n1: float, n2: float, threshold: float = 1e-8) -> bool:
     return False
 
 
-def r_theta_from_ab(a: Union[float, None], b: [float, None]) -> [Tuple[float, float], Tuple[None, None]]:
-    if a is None or b is None:
-        return None, None
+def r_theta_from_ab(a: float, b: float) -> Tuple[float, float]:
+    """Returns norm and argument of a complex number from the real and imaginary parts
+
+    Parameters
+    ----------
+    a: float
+        Real part
+    b: float
+        Imaginary part
+
+    Returns
+    -------
+    Tuple[float, float]
+        Norm and argument
+    """
+
     r = math.sqrt(a ** 2 + b ** 2)
     if b > 0:
         theta = math.acos(a / r)
@@ -40,9 +53,21 @@ def r_theta_from_ab(a: Union[float, None], b: [float, None]) -> [Tuple[float, fl
     return r, theta
 
 
-def ab_from_r_theta(r: [float, None], theta: [float, None]) -> [Tuple[float, float], Tuple[None, None]]:
-    if r is None or theta is None:
-        return None, None
+def ab_from_r_theta(r: float, theta: float) -> Tuple[float, float]:
+    """Returns real and imaginary part of a complex number from its norm and argument
+
+    Parameters
+    ----------
+    r: float
+        Real part
+    theta: float
+        Imaginary part
+
+    Returns
+    -------
+    Tuple[float, float]
+        real and imaginary parts
+    """
     a = r * math.cos(theta)
     b = r * math.sin(theta)
     if abs(a) < 1e-15:
@@ -53,16 +78,52 @@ def ab_from_r_theta(r: [float, None], theta: [float, None]) -> [Tuple[float, flo
 
 
 class Complex:
+    """Complex Number
+
+    Attributes
+    ----------
+    a: float
+        Real part
+    b: float
+        Imaginary part
+    r: float
+        Norm
+    theta: float
+        Argument
+    """
     def __init__(
         self,
-        a: Union[float, "Complex"] = None,
-        b: float = None,
-        r: float = None,
-        theta: float = None,
-        s: str = None,
-        z: "Complex" = None,
+        a: Optional[Union[float, "Complex"]] = None,
+        b: Optional[float] = None,
+        r: Optional[float] = None,
+        theta: Optional[float] = None,
+        s: Optional[str] = None,
+        z: Optional["Complex"] = None,
     ):
         """
+        You can initialise the Complex class in one of the following ways:\n
+          * By giving another complex number as first argument or a *z* argument\n
+          * By giving real and imaginary part as first two arguments\n
+          * By giving explicitely *r=* and *theta=*\n
+          * By giving a mathematical expression as the *s* argument\n
+        See example below.
+        No matter the method you choose, the real and imaginary parts along with norm and argument are set.
+        If you modify any of those, the other 3 will be modified accordingly.
+
+        Parameters
+        ----------
+        a: Optional[Union[float, "Complex"]]
+            Real part
+        b: Optional[float]
+            Imaginary part
+        r: Optional[float]
+            Norm
+        theta: Optional[float]
+            Argument
+        s: Optional[str]
+            String representation
+        z: Optional[Complex]
+            Another complex number to copy
 
         Examples
         --------
@@ -203,7 +264,6 @@ class Complex:
         5.0
         >>> print(znumber_2.theta)
         0.9272952180016123
-
         """
 
         if isinstance(a, Complex):
@@ -232,7 +292,19 @@ class Complex:
             self._guess_repr()
 
     @property
-    def conjugate(self, repres: str = "cartesian"):
+    def conjugate(self, repres: str = "cartesian") -> "Complex":
+        """Returns the complex conjugate of this complex number
+
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion" (will use real part and minus imaginary part to create the conjugate), "exp" or "trigo"
+             (will use norm and minus the argument to create the conjugate)
+
+        Returns
+        -------
+        Complex
+        """
         if repres == "cartesian":
             return Complex(self.a, -self.b)
         elif repres == "trigo" or repres == "exp":
@@ -249,6 +321,15 @@ class Complex:
     def to_string(self, repres: str = "cartesian") -> str:
         """ Human-readable str
 
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion", "exp" or "trigo"
+
+        Returns
+        -------
+        str
+
         Examples
         --------
         >>> z = Complex(3, 3)
@@ -258,7 +339,6 @@ class Complex:
         4.242640687119285 * (cos(0.7853981633974483) + isin(0.7853981633974483))
         >>> print(z.to_string("exp"))
         4.242640687119285e^0.7853981633974483i
-
         """
         bsign = "+" if self.b > 0 else "-"
         if repres == "cartesian":
@@ -273,6 +353,15 @@ class Complex:
     def to_repr(self, repres: str = "cartesian") -> str:
         """ str readable by exec() or eval()
 
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion", "exp" or "trigo"
+
+        Returns
+        -------
+        str
+
         Examples
         --------
         >>> z = Complex(3, 3)
@@ -282,7 +371,6 @@ class Complex:
         4.242640687119285 * (cos(0.7853981633974483) + i * sin(0.7853981633974483))
         >>> print(z.to_repr("exp"))
         4.242640687119285 * e ** (0.7853981633974483 * i)
-
         """
         bsign = "+" if self.b > 0 else "-"
         if repres == "cartesian":
@@ -294,10 +382,17 @@ class Complex:
         else:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
-    # Class methods
-
     def to_latex(self, repres: str = "cartesian") -> str:
-        """
+        """Formats the complex number into a LaTeX expression
+
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion", "exp" or "trigo"
+
+        Returns
+        -------
+        str
 
         Examples
         --------
@@ -320,7 +415,18 @@ class Complex:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
     def round(self, n: int, repres: str = "cartesian") -> "Complex":
-        """
+        """Returns another complex number with rounded attributes using builting `round` method.
+
+        Parameters
+        ----------
+        n: int
+            *n* argument of the *round* method
+        repres: str
+            Can be "cartesion" (will round real and imaginary parts), "exp" or "trigo" (will round norm and argument)
+
+        Returns
+        -------
+        Complex
 
         Examples
         --------
@@ -339,7 +445,16 @@ class Complex:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
     def ceil(self, repres: str = "cartesian") -> "Complex":
-        """
+        """Use `math.ceil` method to create a new complex number
+
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion" (will ceil real and imaginary parts), "exp" or "trigo" (will ceil norm and argument)
+
+        Returns
+        -------
+        Complex
 
         Examples
         --------
@@ -358,7 +473,16 @@ class Complex:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
     def floor(self, repres: str = "cartesian") -> "Complex":
-        """
+        """Use `math.floor` method to create a new complex number
+
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion" (will floor real and imaginary parts), "exp" or "trigo" (will floor norm and argument)
+
+        Returns
+        -------
+        Complex
 
         Examples
         --------
@@ -377,7 +501,17 @@ class Complex:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
     def trunc(self, repres: str = "cartesian") -> "Complex":
-        """
+        """Use `math.trunc` method to create a new complex number
+
+        Parameters
+        ----------
+        repres: str
+            Can be "cartesion" (will truncate real and imaginary parts), "exp" or "trigo"
+            (will truncate norm and argument)
+
+        Returns
+        -------
+        Complex
 
         Examples
         --------
@@ -395,7 +529,21 @@ class Complex:
         else:
             raise ValueError(f"Unknown representation {repres}. Possibilities are 'cartesian', 'trigo' or 'expo'")
 
-    def plot(self, fig: Figure = None, **kwargs) -> Figure:
+    def plot(self, fig: Optional[Figure] = None, **kwargs) -> Figure:
+        """Plots the complex number and returns a `plotly.graph_objs.Figure` object
+
+        Parameters
+        ----------
+        fig: Optional[Figure]
+            Figure to plot in. Will create one if not specified
+        kwargs
+            Any keyword argument to pass to `plotly.express.scatter` (if *fig* is None) or
+            `plotly.graph_objects.Scatter` (if *fig* is not None)
+
+        Returns
+        -------
+        Figure
+        """
         if fig is None:
             fig = px.scatter(
                 pd.DataFrame(columns=["$\\mathbb{R}$", "$\\mathbb{C}$"], data=[[self.a, self.b]]),
@@ -408,78 +556,80 @@ class Complex:
         return fig
 
     @property
-    def a(self):
+    def a(self) -> float:
+        """Real part.
+
+        If modified, recomputes norm and argument by using `complex.Complex.r_theta_from_ab`
+        """
         if str(self.__a) == "-0.0":
             return 0.0
         return self.__a
 
     @a.setter
-    def a(self, value):
+    def a(self, value) -> None:
         self.__a = value
-        self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
+        if self.a is None or self.b is None:
+            self.__r = None
+            self.__theta = None
+        else:
+            self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
 
     @property
-    def b(self):
+    def b(self) -> float:
+        """Imaginary part.
+
+        If modified, recomputes norm and argument by using `complex.Complex.r_theta_from_ab`
+        """
         if str(self.__b) == "-0.0":
             return 0.0
         return self.__b
 
     @b.setter
-    def b(self, value):
+    def b(self, value) -> None:
         self.__b = value
-        self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
+        if self.a is None or self.b is None:
+            self.__r = None
+            self.__theta = None
+        else:
+            self.__r, self.__theta = r_theta_from_ab(self.a, self.b)
 
     @property
-    def r(self):
+    def r(self) -> float:
+        """Norm.
+
+        If modified, recomputes real and imaginary parts by using `complex.Complex.ab_from_r_theta`
+        """
         if str(self.__r) == "-0.0":
             return 0.0
         return self.__r
 
     @r.setter
-    def r(self, value):
+    def r(self, value) -> None:
         self.__r = value
-        self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
+        if self.r is None or self.theta is None:
+            self.__a = None
+            self.__b = None
+        else:
+            self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
 
     @property
-    def theta(self):
+    def theta(self) -> float:
+        """Argument.
+
+        If modified, recomputes real and imaginary parts by using `complex.Complex.ab_from_r_theta`
+        """
         if str(self.__theta) == "-0.0":
             return 0.0
         return self.__theta
 
     @theta.setter
-    def theta(self, value):
+    def theta(self, value) -> None:
         self.__theta = value
-        self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
-
-    @property
-    def mod(self) -> float:
-        """
-
-        Examples
-        --------
-        >>> z = Complex(3, 4)
-        >>> print(z.mod)
-        5.0
-        >>> z = Complex(r=2, theta=5)
-        >>> print(z.mod)
-        2.0
-        """
-        return self.__abs__()
-
-    @property
-    def arg(self) -> float:
-        """
-
-        Examples
-        --------
-        >>> z = Complex(3, 4)
-        >>> print(z.arg)
-        0.9272952180016123
-        >>> z = Complex(r=2, theta=5)
-        >>> print(z.arg)
-        5.0
-        """
-        return self.theta
+        if self.r is None or self.theta is None:
+            self.__a = None
+            self.__b = None
+        else:
+            self.__a, self.__b = ab_from_r_theta(self.r, self.theta)
 
     # Comparison
 
@@ -516,21 +666,19 @@ class Complex:
         False
 
         """
-        if not self.__eq__(other):
-            return True
-        return False
+        return not self.__eq__(other)
 
     def __lt__(self, other) -> bool:
-        raise ArithmeticError("Complex numbers can not be compared!")
+        raise ArithmeticError("No order relation defined between complex numbers")
 
     def __gt__(self, other) -> bool:
-        raise ArithmeticError("Complex numbers can not be compared!")
+        raise ArithmeticError("No order relation defined between complex numbers")
 
     def __le__(self, other) -> bool:
-        raise ArithmeticError("Complex numbers can not be compared!")
+        raise ArithmeticError("No order relation defined between complex numbers")
 
     def __ge__(self, other) -> bool:
-        raise ArithmeticError("Complex numbers can not be compared!")
+        raise ArithmeticError("No order relation defined between complex numbers")
 
     # Unary arithmetic operators
 
@@ -756,7 +904,7 @@ class Complex:
         0.36 - 0.48i
 
         """
-        return self.conjugate * other / self.mod ** 2
+        return self.conjugate * other / self.r ** 2
 
     def __rpow__(self, other: Union[int, float, "Complex", str]) -> "Complex":
         return NotImplemented
@@ -868,6 +1016,10 @@ class Complex:
     # Internal methods
 
     def _guess_repr(self) -> None:
+        """From real part, imaginary part, norm and a argument, identifies which representation was used
+        to create this complex number. If real and imaginary parts were specified, will find that it is cartesian
+        and compute norm and argument. If norm and argument were given, will do the opposite. If something like
+        real part and norm was given, or not enough information to create the number, will raise ValueError"""
         cartesian = False
         trigo = False
 
@@ -879,7 +1031,11 @@ class Complex:
             raise ValueError("Not enough information provided at Complex number creation.")
 
         if cartesian:
-            r, theta = r_theta_from_ab(self.__a, self.__b)
+            if self.__a is None or self.__b is None:
+                r = None
+                theta = None
+            else:
+                r, theta = r_theta_from_ab(self.__a, self.__b)
             if trigo:
                 # Do not set self.r and self.theta if trigo representation was found, since they were already specified
                 # by the user. Just check that those values are compatible with the given a and b
@@ -896,12 +1052,13 @@ class Complex:
             self.theta = self.__theta
 
     def _guess_repr_from_string(self, s) -> None:
+        """Same as `complex.Complex._guess_repr` but using a string as input"""
         s = s.replace("(", "")
         s = s.replace(")", "")
         s = s.replace("*", "")
         s = s.replace("x", "")
         s = s.replace(" ", "")
-        # TODO Add possibility to write something like '3 x e^(i x pi / 4)'
+        # TODO (pcotte) Add possibility to write something like '3 x e^(i x pi / 4)'
         if "e^" in s or "exp" in s:
             s = s.replace("i", "")
             if "e^" in s:
@@ -937,6 +1094,7 @@ mathexp = math.exp
 
 
 def myexp(x) -> Union[float, Complex]:
+    """Overloads `math.exp` to accept complex numbers"""
     if isinstance(x, Complex):
         return mathexp(x.a) * Complex(r=1, theta=x.b)
     else:
@@ -949,6 +1107,7 @@ mathlog = math.log
 
 
 def mylog(x: Union[SupportsFloat, Complex], base=None) -> Union[float, Complex]:
+    """Overloads `math.log` to accept complex numbers"""
     if isinstance(x, Complex):
         if base is None:
             return mathlog(x.r) + i * x.theta

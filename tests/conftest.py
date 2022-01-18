@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.fixture
 def fix1(pytestconfig):
     # print("\nExecuting before init...\n")
