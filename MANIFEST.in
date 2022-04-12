@@ -1,1 +1,8 @@
 graft ./
+global-exclude *.pyc .gitignore
+prune ./.git
+prune ./.github
+prune ./.idea
+prune ./build
+prune ./distinclude versioneer.py
+include ./*/_version.py
