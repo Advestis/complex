@@ -24,7 +24,7 @@
 
 # Complex
 
-A class implementing the notion of complex number
+A class implementing the notion of complex number, used as a template for public packages
 
 ## Installation
 
@@ -45,3 +45,11 @@ znumber_fromstring_exp = Complex(s="5e^3.1415926i")
 znumber + znumber_fromstring
 z_conj = znumber.conjugate
 ```
+
+## Use versioneer in your public package
+
+In you project directory, with a loaded virtualenv :
+* `pip install versioneer`
+* `versioneer install`
+* commit the new files
+* Verify version information with `python setup.py version`
