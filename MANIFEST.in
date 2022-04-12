@@ -5,6 +5,5 @@ prune ./.github
 prune ./.idea
 prune ./build
 prune ./distinclude versioneer.py
-include ./*/_version.py
 include versioneer.py
 include complex/_version.py

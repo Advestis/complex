@@ -189,4 +189,3 @@ jlog
 **/*~
 # But keep .gitignore :)
 !/.gitignore
-/dask-worker-space
