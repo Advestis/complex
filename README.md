@@ -48,10 +48,10 @@ z_conj = znumber.conjugate
 
 ## Use this package as a template
 
-Clone it, and do
+Make a new public github repository by using this one as template. Clone your new repository, then do
 
 ```bash
-cd complex
+cd <your_cloned_directory>
 rm -rf .git
 git init .
 rm .gitattributes
@@ -63,19 +63,24 @@ Then change the following directory names:
 * **complex** -> your project name without upper case
 
 Then change the following files:
-* **setup.cfg**: search and replace **complex** with your new project name (no upper case!!). Change the project
+* [setup.cfg](setup.cfg): search and replace **complex** with your new project name (no upper case!!). Change the project
 description, author and author email. Change the 'install_requires' session, by filling it with what used to be the
 *requirements.txt* file
-* **MANIFEST.in** : delete the line **include complex/_version.py**
-* **tests/conftest.py** : delete if not needed
-* **tests/test_complex.py** : -> rename the file and empty the file
-* **complex/__init__.py** : empty the file
-* **complex/complex.py** : rename and empty the file
-* **.github/workflows/push.yml** : uncomment the end of the file (step *topypi*)
-* **README.md** : change the occurences of **complex** in the urls at the top of the file, and change the
+* [MANIFEST.in](MANIFEST.in) : delete the line **include complex/_version.py**
+* [tests/conftest.py](tests/conftest.py) : delete if not needed
+* [tests/test_complex.py](tests/test_complex.py) : -> rename the file and empty the file
+* [complex/\_\_init\_\_.py](complex/__init__.py) : empty the file
+* [complex/complex.py](complex/complex.py) : rename and empty the file
+* [.github/workflows/push.yml](.github/workflows/push.yml) : uncomment the end of the file (step *topypi*)
+* [README.md](README.md) : change the occurences of **complex** in the urls at the top of the file, and change the
 rest of the file content to describe your poject.
+* Install and use **versioneer** (see below)
+* push to master
+* Protect your master branch (in github repository's settings)
+* Make a new branch locally, push and make a PR to master to check that the CI/CD triggers your pytests.
+* Set the GitHub pages of your repo
 
-## Use versioneer in your public package
+## Use versioneer in your package
 
 In you project directory, with a loaded virtualenv, do :
 * `pip install versioneer`
