@@ -63,7 +63,9 @@ Then change the following directory names:
 * **complex** -> your project name without upper case
 
 Then change the following files:
-* **setup.cfg**: search and replace **complex** with your new project name (no upper case!!)
+* **setup.cfg**: search and replace **complex** with your new project name (no upper case!!). Change the project
+description, author and author email. Change the 'install_requires' session, by filling it with what used to be the
+*requirements.txt* file
 * **MANIFEST.in** : delete the line **include complex/_version.py**
 * **tests/conftest.py** : delete if not needed
 * **tests/test_complex.py** : -> rename the file and empty the file
