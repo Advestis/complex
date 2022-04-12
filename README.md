@@ -69,10 +69,7 @@ Then change the following files:
 * **tests/test_complex.py** : -> rename the file and empty the file
 * **complex/__init__.py** : empty the file
 * **complex/complex.py** : rename and empty the file
-
-Then, rename the python files and directories to match your project's name, change the code in it.
-
-
+* **.github/workflows/push.yml** : uncomment the end of the file (step *topypi*)
 
 ## Use versioneer in your public package
 
