@@ -72,6 +72,8 @@ description, author and author email. Change the 'install_requires' session, by 
 * **complex/__init__.py** : empty the file
 * **complex/complex.py** : rename and empty the file
 * **.github/workflows/push.yml** : uncomment the end of the file (step *topypi*)
+* **README.md** : change the occurences of **complex** in the urls at the top of the file, and change the
+rest of the file content to describe your poject.
 
 ## Use versioneer in your public package
 
