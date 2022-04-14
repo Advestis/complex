@@ -31,7 +31,12 @@ jobs:
             echo "Pull request message not provided!!"
             exit 1
           fi
-          echo "::set-output name=run::true"
+          if [[ "$message" != "*!minor" ]] && [[ "$message" != "*!wip" ]] && [[ "$message" != "*!WIP" ]] && [[ "$message" != "doc:*" ]]
+            echo "::set-output name=run::true"
+          else
+            echo "PR message is $message: skipping pytests"
+            echo "::set-output name=run::false"
+          fi
 
       - uses: actions/checkout@master
         if: steps.check.outputs.run == 'true'
