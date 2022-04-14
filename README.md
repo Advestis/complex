@@ -2,12 +2,12 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 #### Status
-![Pytests](https://github.com/Advestis/complex/actions/workflows/pull-request.yml/badge.svg)
-![push](https://github.com/Advestis/complex/actions/workflows/push.yml/badge.svg)
+[![pytests](https://github.com/Advestis/complex/actions/workflows/pull-request.yml/badge.svg)](https://github.com/Advestis/complex/actions/workflows/pull-request.yml)
+[![push](https://github.com/Advestis/complex/actions/workflows/push.yml/badge.svg)](https://github.com/Advestis/complex/actions/workflows/push.yml)
 
 ![maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
-![issues](https://img.shields.io/github/issues/Advestis/complex.svg)
-![pr](https://img.shields.io/github/issues-pr/Advestis/complex.svg)
+[![issues](https://img.shields.io/github/issues/Advestis/complex.svg)](https://github.com/Advestis/complex/issues)
+[![pr](https://img.shields.io/github/issues-pr/Advestis/complex.svg)](https://github.com/Advestis/complex/pulls)
 
 
 #### Compatibilities
@@ -60,7 +60,7 @@ rm complex/_version.py
 ```
 
 Then change the following directory names:
-* **complex** -> your project name without upper case
+* [complex](complex) -> your project name without upper case
 
 Then change the following files:
 * [setup.cfg](setup.cfg): search and replace **complex** with your new project name (no upper case!!). Change the project

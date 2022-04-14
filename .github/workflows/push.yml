@@ -2,12 +2,19 @@ on:
   push:
     branches:
       - master
-      - main
 
 name: PyPI
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: "
+      !endsWith(github.event.head_commit.message, '!minor')
+      && !endsWith(github.event.head_commit.message, '!wip')
+      && !endsWith(github.event.head_commit.message, '!WIP')
+      && !startsWith(github.event.head_commit.message, 'doc:')
+      && !startsWith(github.event.head_commit.message, 'Merge branch ')
+      && !startsWith(github.event.head_commit.message, 'test')
+    "
     strategy:
       matrix:
         python-version: [ 3.9 ]
@@ -16,17 +23,8 @@ jobs:
       - name: Set envvars
         run: |
           repo_name=$(echo ${{ github.repository }} | sed "s/${{ github.repository_owner }}\///g")
+          echo "Repo name is $repo_name"
           echo "REPO_NAME=$repo_name" >> $GITHUB_ENV
-          echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
-          if [ "${GITHUB_REF#refs/heads/}" != "master" ] && [ "${GITHUB_REF#refs/heads/}" != "main" ] ; then
-            echo "SUFFIX=$(echo -${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
-          fi
-
-      - name: Check envvars
-        run: |
-          echo "branch: ${{ env.BRANCH_NAME }}"
-          echo "repo: ${{ env.REPO_NAME }}"
-          echo "suffix: ${{ env.SUFFIX }}"
 
       - uses: actions/checkout@master
         with:
@@ -59,7 +57,6 @@ jobs:
           python setup.py sdist
 
       - name: make doc
-        if: ${{ env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }}
         run: |
           pip install pdoc3
           pdoc --html ${{ env.REPO_NAME }} -o docs
@@ -67,7 +64,6 @@ jobs:
           rm -r docs/${{ env.REPO_NAME }}
 
       - name: commit doc
-        if: ${{ env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -75,7 +71,6 @@ jobs:
           git commit -m "docs"
 
       - name: Push doc
-        if: ${{ env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ORG_TOKEN_CICD }}
@@ -83,7 +78,6 @@ jobs:
           force: true
 
 #      - name: topypi
-#        if: ${{ env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'main' }}
 #        uses: pypa/gh-action-pypi-publish@master
 #        with:
 #          user: ${{ secrets.ORG_PYPI_LOGIN }}

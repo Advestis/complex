@@ -2,12 +2,17 @@ on:
   pull_request:
     branches:
       - master
-      - main
 
 name: pytests
 jobs:
   pytest:
     runs-on: ubuntu-latest
+    if: "
+      !endsWith(github.event.head_commit.message, '!wip')
+      && !startsWith(github.event.head_commit.message, 'pkg:')
+      && !endsWith(github.event.head_commit.message, '!WIP')
+      && !startsWith(github.event.head_commit.message, 'doc:')
+    "
     strategy:
       matrix:
         python-version: [ 3.8, 3.9 ]
