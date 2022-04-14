@@ -17,6 +17,13 @@ jobs:
       matrix:
         python-version: [ 3.8, 3.9 ]
     steps:
+      - name: Get PR Commits
+        id: 'get-pr-commits'
+        uses: tim-actions/get-pr-commits@master
+
+      - name: Check content
+        run: |
+          echo ${{ steps.get-pr-commits.outputs.commits }}
 
       - uses: actions/checkout@master
         with:
