@@ -3,6 +3,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: pypi
+  cancel-in-progress: true
+
 name: push-pypi
 jobs:
   publish:
@@ -30,11 +34,16 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.cfg') }}
+
       - name: build
         run: |
           python -m pip install --upgrade pip
           # versioneer gets the latest version from number of commits since tag
-          pip install .
+          pip --upgrade --upgrade-strategy eager install .
           # use this version to make a NEW tag
           version=$(python -c '
           import versioneer

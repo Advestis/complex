@@ -3,6 +3,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: doc
+  cancel-in-progress: true
+
 name: push-doc
 jobs:
   publish:
@@ -35,14 +39,19 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.cfg') }}
+
       - name: build
         run: |
           python -m pip install --upgrade pip
-          pip install .
+          pip --upgrade --upgrade-strategy eager install .
 
       - name: make doc
         run: |
-          pip install pdoc3
+          pip --upgrade --upgrade-strategy eager install pdoc3
           pdoc --html ${{ env.REPO_NAME }} -o docs
           mv docs/${{ env.REPO_NAME }}/* docs/
           rm -r docs/${{ env.REPO_NAME }}
