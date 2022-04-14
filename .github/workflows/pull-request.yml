@@ -27,6 +27,7 @@ jobs:
         if: success() && steps.PR.outputs.number
         run: |
           message=$(echo ${{ steps.PR.outputs.pr_body }})
+          echo "Message is $message"
           if [[ "$message" == "" ]] ; then
             echo "Pull request message not provided!!"
             exit 1
@@ -34,7 +35,7 @@ jobs:
           if [[ "$message" != "*!minor" ]] && [[ "$message" != "*!wip" ]] && [[ "$message" != "*!WIP" ]] && [[ "$message" != "doc:*" ]] ; then
             echo "::set-output name=run::true"
           else
-            echo "PR message is $message: skipping pytests"
+            echo "skipping pytests"
             echo "::set-output name=run::false"
           fi
 
