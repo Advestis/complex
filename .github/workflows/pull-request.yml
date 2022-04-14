@@ -5,14 +5,34 @@ on:
 
 name: pytests
 jobs:
-  pytest:
+
+  check:
     runs-on: ubuntu-latest
-    if: "
-      !endsWith(github.event.head_commit.message, '!minor')
-      !endsWith(github.event.head_commit.message, '!wip')
-      && !endsWith(github.event.head_commit.message, '!WIP')
-      && !startsWith(github.event.head_commit.message, 'doc:')
-    "
+    steps:
+      - uses: 8BitJonny/gh-get-current-pr@2.0.0
+        id: PR
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Verbose setting SHA when using Pull_Request event trigger to fix #16
+          sha: ${{ github.event.pull_request.head.sha }}
+          # Only return if PR is still open
+          filterOutClosed: true
+          # Only return if PR is not in draft state
+          filterOutDraft: 1
+
+      - name: Check PR message
+        id: check
+        run: |
+          message=$(echo ${{ steps.PR.outputs.pr_body }})
+          echo "Message is $message"
+          if [[ "$message" == "" ]] ; then
+            echo "Pull request message not provided!!"
+            exit 1
+          fi
+
+  pytest:
+    needs: check
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [ 3.8, 3.9 ]
