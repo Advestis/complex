@@ -3,7 +3,7 @@ on:
     branches:
       - master
 
-name: PyPI
+name: push-doc
 jobs:
   publish:
     runs-on: ubuntu-latest
