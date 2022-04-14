@@ -31,7 +31,7 @@ jobs:
             echo "Pull request message not provided!!"
             exit 1
           fi
-          if [[ "$message" != "*!minor" ]] && [[ "$message" != "*!wip" ]] && [[ "$message" != "*!WIP" ]] && [[ "$message" != "doc:*" ]]
+          if [[ "$message" != "*!minor" ]] && [[ "$message" != "*!wip" ]] && [[ "$message" != "*!WIP" ]] && [[ "$message" != "doc:*" ]] ; then
             echo "::set-output name=run::true"
           else
             echo "PR message is $message: skipping pytests"
