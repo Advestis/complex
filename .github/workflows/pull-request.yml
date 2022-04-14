@@ -8,9 +8,9 @@ jobs:
   pytest:
     runs-on: ubuntu-latest
     if: "
-      !endsWith(github.event.head_commit.message, 'minor')
-      !endsWith(github.event.head_commit.message, 'wip')
-      && !endsWith(github.event.head_commit.message, 'WIP')
+      !endsWith(github.event.head_commit.message, '!minor')
+      && !endsWith(github.event.head_commit.message, '!wip')
+      && !endsWith(github.event.head_commit.message, '!WIP')
       && !startsWith(github.event.head_commit.message, 'doc:')
     "
     strategy:
