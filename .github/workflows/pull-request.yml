@@ -10,7 +10,6 @@ jobs:
     if: "
       !endsWith(github.event.head_commit.message, '!minor')
       !endsWith(github.event.head_commit.message, '!wip')
-      && !startsWith(github.event.head_commit.message, 'pkg:')
       && !endsWith(github.event.head_commit.message, '!WIP')
       && !startsWith(github.event.head_commit.message, 'doc:')
     "

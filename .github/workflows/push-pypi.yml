@@ -12,19 +12,12 @@ jobs:
       && !endsWith(github.event.head_commit.message, '!wip')
       && !endsWith(github.event.head_commit.message, '!WIP')
       && !startsWith(github.event.head_commit.message, 'doc:')
-      && !startsWith(github.event.head_commit.message, 'Merge branch ')
       && !startsWith(github.event.head_commit.message, 'test')
     "
     strategy:
       matrix:
         python-version: [ 3.9 ]
     steps:
-
-      - name: Set envvars
-        run: |
-          repo_name=$(echo ${{ github.repository }} | sed "s/${{ github.repository_owner }}\///g")
-          echo "Repo name is $repo_name"
-          echo "REPO_NAME=$repo_name" >> $GITHUB_ENV
 
       - uses: actions/checkout@master
         with:
@@ -55,27 +48,6 @@ jobs:
           echo "Version is $version"
           python setup.py version
           python setup.py sdist
-
-      - name: make doc
-        run: |
-          pip install pdoc3
-          pdoc --html ${{ env.REPO_NAME }} -o docs
-          mv docs/${{ env.REPO_NAME }}/* docs/
-          rm -r docs/${{ env.REPO_NAME }}
-
-      - name: commit doc
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "docs"
-
-      - name: Push doc
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ORG_TOKEN_CICD }}
-          branch: "gh-pages"
-          force: true
 
 #      - name: topypi
 #        uses: pypa/gh-action-pypi-publish@master
