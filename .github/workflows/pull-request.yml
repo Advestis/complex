@@ -7,38 +7,60 @@ name: pytests
 jobs:
   pytest:
     runs-on: ubuntu-latest
-    if: "
-      !endsWith(github.event.head_commit.message, '!minor')
-      && !endsWith(github.event.head_commit.message, '!wip')
-      && !endsWith(github.event.head_commit.message, '!WIP')
-      && !startsWith(github.event.head_commit.message, 'doc:')
-    "
     strategy:
       matrix:
         python-version: [ 3.8, 3.9 ]
     steps:
-      - name: Get PR Commits
-        id: 'get-pr-commits'
-        uses: tim-actions/get-pr-commits@master
+      - uses: 8BitJonny/gh-get-current-pr@2.0.0
+        id: PR
         with:
-          token: ${{ secrets.ORG_TOKEN_CICD }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # Verbose setting SHA when using Pull_Request event trigger to fix #16
+          sha: ${{ github.event.pull_request.head.sha }}
+          # Only return if PR is still open
+          filterOutClosed: true
+          # Only return if PR is not in draft state
+          filterOutDraft: 1
 
-      - name: Check content
+      - name: Check PR message
+        if: success() && steps.PR.outputs.number
         run: |
-          echo ${{ steps.get-pr-commits.outputs.commits.latest }}
+          message=$(echo ${{ steps.PR.outputs.pr_body }})
+          if [[ "$message" == "" ]] ; then
+            echo "Pull request message not provided!!"
+            exit 1
+          fi
 
       - uses: actions/checkout@master
+        if: "
+          !endsWith(steps.PR.outputs.pr_body, '!minor')
+          && !endsWith(steps.PR.outputs.pr_body, '!wip')
+          && !endsWith(steps.PR.outputs.pr_body, '!WIP')
+          && !startsWith(steps.PR.outputs.pr_body, 'doc:')
+        "
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
           ref: refs/heads/${{ github.head_ref }}
 
       - name: Set up Python ${{ matrix.python-version }}
+        if: "
+          !endsWith(steps.PR.outputs.pr_body, '!minor')
+          && !endsWith(steps.PR.outputs.pr_body, '!wip')
+          && !endsWith(steps.PR.outputs.pr_body, '!WIP')
+          && !startsWith(steps.PR.outputs.pr_body, 'doc:')
+        "
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
+        if: "
+          !endsWith(steps.PR.outputs.pr_body, '!minor')
+          && !endsWith(steps.PR.outputs.pr_body, '!wip')
+          && !endsWith(steps.PR.outputs.pr_body, '!WIP')
+          && !startsWith(steps.PR.outputs.pr_body, 'doc:')
+        "
         run: |
           python -m pip install --upgrade pip
           pip install wheel
@@ -48,5 +70,11 @@ jobs:
           pip install .
 
       - name: Test with pytest
+        if: "
+          !endsWith(steps.PR.outputs.pr_body, '!minor')
+          && !endsWith(steps.PR.outputs.pr_body, '!wip')
+          && !endsWith(steps.PR.outputs.pr_body, '!WIP')
+          && !startsWith(steps.PR.outputs.pr_body, 'doc:')
+        "
         run: |
           pytest -s -v
