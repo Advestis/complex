@@ -72,7 +72,7 @@ description, author and author email. Change the 'install_requires' session, by 
 * [tests/test_complex.py](tests/test_complex.py) : -> rename the file and empty the file
 * [complex/\_\_init\_\_.py](complex/__init__.py) : empty the file
 * [complex/complex.py](complex/complex.py) : rename and empty the file
-* [.github/workflows/push.yml](.github/workflows/push-doc.yml) : uncomment the end of the file (step *topypi*)
+* [.github/workflows/push-pypi.yml](.github/workflows/push-doc.yml) : uncomment the end of the file (step *topypi*)
 * [README.md](README.md) : change the occurences of **complex** in the urls at the top of the file, and change the
 rest of the file content to describe your poject.
 * Install and use **versioneer** (see below)
