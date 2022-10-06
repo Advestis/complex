@@ -51,16 +51,15 @@ jobs:
 
       - name: make doc
         run: |
-          pip install --upgrade --upgrade-strategy eager pdoc3
-          pdoc --html ${{ env.REPO_NAME }} -o docs
-          mv docs/${{ env.REPO_NAME }}/* docs/
-          rm -r docs/${{ env.REPO_NAME }}
+          pip install --upgrade --upgrade-strategy sphinx
+          pip install --upgrade --upgrade-strategy pydata_sphinx_theme
+          cd docs && make html && cd ..
 
       - name: commit doc
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
+          git add -f docs/build
           git commit -m "docs"
 
       - name: Push doc
