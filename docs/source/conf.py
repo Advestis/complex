@@ -29,7 +29,8 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    'numpydoc',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.napoleon'
 ]
 
 templates_path = ['_templates']
@@ -41,8 +42,31 @@ exclude_patterns = []
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 html_theme_options = {
-    "external_links": [],
+    "icon_links": [
+        {
+            "name": "Site web",
+            "url": "https://www.advestis.com/",
+            "icon": "fab fa-google",
+        }, ],
     "github_url": "https://github.com/Advestis",
+
 }
 html_favicon = "_static/favicon.png"
-html_logo = "_static/favicon.png"
+html_logo = "_static/logo.png"
+autodoc_mock_imports = ["pandas"]
+intersphinx_mapping = {'pandas': ('https://pandas.pydata.org/docs/', None),
+                       'numpy': ('https://numpy.org/doc/stable/', None)}
+
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = True
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = False
+napoleon_use_admonition_for_references = False
+napoleon_use_ivar = True
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_preprocess_types = False
+napoleon_type_aliases = None
+napoleon_attr_annotations = True
