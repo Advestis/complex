@@ -4,21 +4,17 @@
    contain the root `toctree` directive.
 
 Complex documentation
-===================================
+======================
 
-Complex is a  class implementing the notion of complex number, used as a template for public packages
-
-.. toctree::
-   :caption: Contents:
-
-
+Complex is a class implementing the notion of complex number, used as a template for public packages
 
 Contents
-=========
+========
 .. toctree::
+   :maxdepth: 1
 
    installation
    readme
    usage
-   resume
+
 
