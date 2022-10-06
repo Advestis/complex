@@ -6,7 +6,7 @@ import os.path
 import sys
 from datetime import datetime
 
-# sys.path.insert(0, os.path.abspath('../../complex'))
+sys.path.insert(0, os.path.abspath('../../complex'))
 # sys.path.extend(
 #     [
 #         # numpy standard doc extensions
