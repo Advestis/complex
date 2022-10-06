@@ -30,7 +30,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'numpydoc',
-    'm2r2'
 ]
 
 templates_path = ['_templates']
@@ -45,5 +44,5 @@ html_theme_options = {
     "external_links": [],
     "github_url": "https://github.com/Advestis",
 }
-html_favicon = "../web/favicon.png"
-html_logo = "../web/favicon.jpg"
+html_favicon = "_static/favicon.png"
+html_logo = "_static/favicon.png"
