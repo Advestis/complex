@@ -42,6 +42,8 @@ exclude_patterns = []
 
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
+html_favicon = "_static/favicon.png"
+html_logo = "_static/logo_Advestis_HD.png"
 html_theme_options = {
     "icon_links": [
         {
@@ -52,9 +54,15 @@ html_theme_options = {
     "github_url": "https://github.com/Advestis",
 
 }
-html_favicon = "_static/favicon.png"
-html_logo = "_static/logo.png"
+
 autodoc_mock_imports = ["pandas"]
+html_context = {
+   "default_mode": "light"
+}
+html_sidebars = {
+    "**": ["search-field.html"]
+}
+
 intersphinx_mapping = {'pandas': ('https://pandas.pydata.org/docs/', None),
                        'numpy': ('https://numpy.org/doc/stable/', None)}
 
