@@ -6,13 +6,13 @@ import os.path
 import sys
 from datetime import datetime
 
-sys.path.insert(0, os.path.abspath('../../complex'))
-sys.path.extend(
-    [
-        # numpy standard doc extensions
-        os.path.join(os.path.dirname(__file__), "..", "../..", "sphinxext")
-    ]
-)
+# sys.path.insert(0, os.path.abspath('../../complex'))
+# sys.path.extend(
+#     [
+#         # numpy standard doc extensions
+#         os.path.join(os.path.dirname(__file__), "..", "../..", "sphinxext")
+#     ]
+# )
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -30,7 +30,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.napoleon'
+    'sphinx.ext.napoleon',
+    'sphinx_mdinclude'
 ]
 
 templates_path = ['_templates']
