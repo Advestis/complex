@@ -1,6 +1,6 @@
 Class Complex
 =============
 
-.. automodule:: complex2
+.. automodule:: complex
    :members:
 
