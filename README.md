@@ -86,5 +86,6 @@ rest of the file content to describe your poject.
 In you project directory, with a loaded virtualenv, do :
 * `pip install versioneer`
 * `versioneer install`
+* `git tag v0.1`
 * commit the new files
 * Verify version information with `python setup.py version`
