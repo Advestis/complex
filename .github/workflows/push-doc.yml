@@ -59,7 +59,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -f docs/build
+          git add -f docs/
           git commit -m "docs"
 
       - name: Push doc
