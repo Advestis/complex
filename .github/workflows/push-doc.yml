@@ -53,6 +53,7 @@ jobs:
         run: |
           pip install --upgrade --upgrade-strategy eager sphinx
           pip install --upgrade --upgrade-strategy eager pydata_sphinx_theme
+          pip install --upgrade --upgrade-strategy eager sphinx_mdinclude
           cd docs && make html && mv build/html/* ./ && cd ..
 
       - name: commit doc
