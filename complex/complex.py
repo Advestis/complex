@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from plotly.graph_objs import Figure
 from typing import Union, Tuple, SupportsFloat, Optional
-from transparentpath import Path, TransparentPath
+
 
 class ForbiddenAssignmentError(Exception):
     pass
@@ -15,7 +15,7 @@ ATTRIBUTES = ["a", "b", "r", "theta"]
 CARTESIAN_ATTRIBUTES = ["a", "b"]
 
 
-def compatible_numbers(n1: float, n2: float, threshold: float = 1e-8) -> Path:
+def compatible_numbers(n1: float, n2: float, threshold: float = 1e-8) -> bool:
     """Returns True if both numbers are equal or almost the same"""
     if n1 == n2:
         return True
