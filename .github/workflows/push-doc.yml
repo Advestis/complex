@@ -51,8 +51,8 @@ jobs:
 
       - name: make doc
         run: |
-          pip install --upgrade --upgrade-strategy sphinx
-          pip install --upgrade --upgrade-strategy pydata_sphinx_theme
+          pip install --upgrade --upgrade-strategy eager sphinx
+          pip install --upgrade --upgrade-strategy eager pydata_sphinx_theme
           cd docs && make html && cd ..
 
       - name: commit doc
