@@ -13,8 +13,7 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   installation
    readme
-   usage
+   complex
 
 

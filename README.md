@@ -23,31 +23,32 @@
 [![website](https://img.shields.io/badge/website-Advestis.com-blue)](https://www.advestis.com/)
 [![mail](https://img.shields.io/badge/mail-maintainers-blue)](mailto:pythondev@advestis.com)
 
-# Complex
+## Complex
 
 A class implementing the notion of complex number, used as a template for public packages
 
-## Installation
+### Installation
 
 ```
-git clone https://github.com/pcotteadvestis/Complex
-cd Complex
+git clone https://github.com/Advestis/complex
+cd complex
 python setup.py install
 ```
 
-## Usage
+### Usage
 
 ```python
 from complex import Complex
+
 znumber = Complex(3, 4)
-znumber_fromstring = Complex(s="3+4i")
-znumber_fromstring_cos = Complex(s="3cos(4) + 4isin(1)")
-znumber_fromstring_exp = Complex(s="5e^3.1415926i")
+znumber_fromstring = Complex(from_string="3+4i")
+znumber_fromstring_cos = Complex(from_string="3cos(4) + 4isin(1)")
+znumber_fromstring_exp = Complex(from_string="5e^3.1415926i")
 znumber + znumber_fromstring
 z_conj = znumber.conjugate
 ```
 
-## Use this package as a template
+### Use this package as a template
 
 Make a new public github repository by using this one as template. Clone your new repository, then do
 
@@ -81,11 +82,12 @@ rest of the file content to describe your poject.
 * Make a new branch locally, push and make a PR to master to check that the CI/CD triggers your pytests.
 * Set the GitHub pages of your repo
 
-## Use versioneer in your package
+### Use versioneer in your package
 
 In you project directory, with a loaded virtualenv, do :
 * `pip install versioneer`
 * `versioneer install`
 * `git tag v0.1`
+* Add the line `include you_package_name/_version.py` to [MANIFEST.in](MANIFEST.in)
 * commit the new files
 * Verify version information with `python setup.py version`

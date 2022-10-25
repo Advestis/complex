@@ -2,6 +2,7 @@ graft ./
 global-exclude *.pyc .gitignore
 prune ./.git
 prune ./.github
+prune ./.pylintrc
 prune ./.idea
 prune ./build
 prune ./distinclude
