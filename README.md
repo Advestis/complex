@@ -88,5 +88,6 @@ In you project directory, with a loaded virtualenv, do :
 * `pip install versioneer`
 * `versioneer install`
 * `git tag v0.1`
+* Add the line `include you_package_name/_version.py` to [MANIFEST.in](MANIFEST.in)
 * commit the new files
 * Verify version information with `python setup.py version`
