@@ -39,10 +39,11 @@ python setup.py install
 
 ```python
 from complex import Complex
+
 znumber = Complex(3, 4)
-znumber_fromstring = Complex(s="3+4i")
-znumber_fromstring_cos = Complex(s="3cos(4) + 4isin(1)")
-znumber_fromstring_exp = Complex(s="5e^3.1415926i")
+znumber_fromstring = Complex(from_string="3+4i")
+znumber_fromstring_cos = Complex(from_string="3cos(4) + 4isin(1)")
+znumber_fromstring_exp = Complex(from_string="5e^3.1415926i")
 znumber + znumber_fromstring
 z_conj = znumber.conjugate
 ```
