@@ -50,15 +50,18 @@ z_conj = znumber.conjugate
 
 ### Use this package as a template
 
-Make a new public github repository by using this one as template. Clone your new repository, then do
+Make a new blank public github repository, name it as you want. Clone Complex locally, open a terminal and execute the following lines
 
 ```bash
-cd <your_cloned_directory>
+cd <parent directory of the cloned Complex repo>
+mv complex <your_new_repo_name>
+cd <your_new_repo_name>
 rm -rf .git
 git init .
 rm .gitattributes
 rm versioneer.py
 rm complex/_version.py
+git remote add origin https://github.com/your_new_repo
 ```
 
 Then change the following directory names:
@@ -77,7 +80,7 @@ description, author and author email. Change the 'install_requires' session, by 
 * [README.md](README.md) : change the occurences of **complex** in the urls at the top of the file, and change the
 rest of the file content to describe your poject.
 * Install and use **versioneer** (see below)
-* push to master
+* Push to master, including tags : on PyCharm's push window, click the checkbox *push tags* (bottom). If using the command line, do `git push -u origin master --follow-tags`
 * Protect your master branch (in github repository's settings)
 * Make a new branch locally, push and make a PR to master to check that the CI/CD triggers your pytests.
 * Set the GitHub pages of your repo
@@ -90,4 +93,4 @@ In you project directory, with a loaded virtualenv, do :
 * `git tag v0.1`
 * Add the line `include you_package_name/_version.py` to [MANIFEST.in](MANIFEST.in)
 * commit the new files
-* Verify version information with `python setup.py version`
+* Verify version information with `python setup.py version`. The version should be 'v0.1'.
