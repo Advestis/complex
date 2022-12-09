@@ -1,0 +1,1545 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Complex Module &#8212; complex  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'complex';</script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Readme" href="readme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo_Advestis_HD.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo_Advestis_HD.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="readme.html">
+                        Readme
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Complex Module
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Advestis" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.advestis.com/" title="Site web" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-google"></i></span>
+            <label class="sr-only">Site web</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="readme.html">
+                        Readme
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Complex Module
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Advestis" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.advestis.com/" title="Site web" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-google"></i></span>
+            <label class="sr-only">Site web</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="complex-module">
+<h1>Complex Module<a class="headerlink" href="#complex-module" title="Permalink to this heading">#</a></h1>
+<section id="module-complex.complex">
+<span id="complex-class"></span><h2>Complex Class<a class="headerlink" href="#module-complex.complex" title="Permalink to this heading">#</a></h2>
+<p>Contains the class Complex, which implements the notion of complex number</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="complex.complex.Complex">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">complex.complex.</span></span><span class="sig-name descname"><span class="pre">Complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaginary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_complex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#complex.complex.Complex" title="Permalink to this definition">#</a></dt>
+<dd><p>Complex Number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – </p></li>
+<li><p><strong>imaginary</strong> (<em>float</em>) – </p></li>
+<li><p><strong>norm</strong> (<em>float</em>) – </p></li>
+<li><p><strong>theta</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__add__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span> <span class="o">+</span> <span class="n">znumber2</span><span class="p">)</span>
+<span class="go">8.0 + 10.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="s2">&quot;5 + 6i&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span> <span class="o">+</span> <span class="n">znumber2</span><span class="p">)</span>
+<span class="go">8.0 + 10.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span> <span class="o">+</span> <span class="n">znumber2</span><span class="p">)</span>
+<span class="go">8.0 + 4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#complex.complex.Complex.__eq__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.9272952180016123</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">==</span> <span class="n">znumber2</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__iadd__">
+<span class="sig-name descname"><span class="pre">__iadd__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__iadd__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">+=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="p">)</span>
+<span class="go">8.0 + 10.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__idiv__">
+<span class="sig-name descname"><span class="pre">__idiv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__idiv__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">/=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">0.6e^-2.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__imul__">
+<span class="sig-name descname"><span class="pre">__imul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__imul__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">*=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">15.0e^10.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaginary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_complex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#complex.complex.Complex.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>You can initialise the Complex class in one of the following ways:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>By giving another complex number as first argument or a <em>from_complex</em> argument</p></li>
+<li><p>By giving real and imaginary part as first two arguments</p></li>
+<li><p>By giving explicitely <em>norm=</em> and <em>theta=</em></p></li>
+<li><p>By giving a mathematical expression as the <em>from_string</em> argument</p></li>
+</ul>
+</div></blockquote>
+<p>See example below.
+No matter the method you choose, the real and imaginary parts along with norm and argument are set.
+If you modify any of those, the other 3 will be modified accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>float</em><em>, </em><em>&quot;Complex&quot;</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>imaginary</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>norm</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>theta</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – </p></li>
+<li><p><strong>from_string</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – String representation</p></li>
+<li><p><strong>from_complex</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><em>Complex</em></a><em>]</em>) – Another complex number to copy</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">ValueError</span>: <span class="n">You specified both cartesian and trigo representations but the values are not compatible</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.9272952180016123</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.9272952180016123</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;3+4i&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;4i&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">1.5707963267948966</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;3cos(0)&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;4isin(1.5707963267948966)&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">1.5707963267948966</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># In case your string can not be a complex (here we would have two different r for instance),</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># it is the part in &#39;cos&#39; that is used.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;3cos(4) + 4isin(1)&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">-1.960930862590836</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">-2.2704074859237844</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">4.0</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;3 + 4 * i&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;5e^0.9272952180016123i&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_string</span><span class="o">=</span><span class="s2">&quot;5*(cos(0.9272952180016123i) + isin(0.9272952180016123i)&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber_2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">from_complex</span><span class="o">=</span><span class="n">znumber</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber_2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">znumber</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">imaginary</span><span class="p">)</span>
+<span class="go">4.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">norm</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber_2</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span>
+<span class="go">0.9272952180016123</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__ipow__">
+<span class="sig-name descname"><span class="pre">__ipow__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__ipow__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">**=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;Complex&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">**=</span> <span class="s2">&quot;5e^6i&quot;</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;str&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">**=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">243.0e^20.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__isub__">
+<span class="sig-name descname"><span class="pre">__isub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__isub__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">-=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="p">)</span>
+<span class="go">-2.0 - 2.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__mul__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">*</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">15.0e^10.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="s2">&quot;5e^6i&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">*</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">15.0e^10.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">*</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">15.0e^4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__ne__">
+<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#complex.complex.Complex.__ne__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mf">0.9272952180016123</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">!=</span> <span class="n">znumber2</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__neg__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z2</span> <span class="o">=</span> <span class="o">-</span><span class="n">znumber</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+<span class="go">-3.0 - 4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__pow__">
+<span class="sig-name descname"><span class="pre">__pow__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__pow__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">**</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;Complex&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="s2">&quot;5e^6i&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">**</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for ** or pow(): &#39;Complex&#39; and &#39;str&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">**</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">243.0e^20.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__radd__">
+<span class="sig-name descname"><span class="pre">__radd__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__radd__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">znumber</span><span class="p">)</span>
+<span class="go">4.0 + 4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__rmul__">
+<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__rmul__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">znumber</span><span class="p">)</span>
+<span class="go">6.0 + 8.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__rsub__">
+<span class="sig-name descname"><span class="pre">__rsub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__rsub__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">znumber</span><span class="p">)</span>
+<span class="go">2.0 + 4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__rtruediv__">
+<span class="sig-name descname"><span class="pre">__rtruediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__rtruediv__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="n">znumber</span><span class="p">)</span>
+<span class="go">0.36 - 0.48i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#complex.complex.Complex.__setattr__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">norm</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">q</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">complex.ForbiddenAssignmentError</span>: <span class="n">The Complex class does not allow for new attributes assignment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">real</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">norm</span>
+<span class="go">5.656854249492381</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span><span class="o">.</span><span class="n">__norm</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">complex.ForbiddenAssignmentError</span>: <span class="n">The Complex class does not allow for new attributes assignment</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__sub__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span> <span class="o">-</span> <span class="n">znumber2</span><span class="p">)</span>
+<span class="go">-2.0 - 2.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="s2">&quot;5 + 6i&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span> <span class="o">-</span> <span class="n">znumber2</span><span class="p">)</span>
+<span class="go">-2.0 - 2.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span> <span class="o">-</span> <span class="n">znumber2</span><span class="p">)</span>
+<span class="go">-2.0 + 4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.__truediv__">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.__truediv__" title="Permalink to this definition">#</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="n">norm</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">/</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">0.6e^-2.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="s2">&quot;5e^6i&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">/</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">0.6e^-2.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">znumber2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span> <span class="o">/</span> <span class="n">znumber2</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">0.6e^4.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="complex.complex.Complex.cartesian">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cartesian</span></span><a class="headerlink" href="#complex.complex.Complex.cartesian" title="Permalink to this definition">#</a></dt>
+<dd><p>Is true if the complex number was created from real and imaginary parts, and not from norm and thera</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.ceil">
+<span class="sig-name descname"><span class="pre">ceil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.ceil" title="Permalink to this definition">#</a></dt>
+<dd><p>Use <cite>math.ceil</cite> method to create a new complex number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex">Complex</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mf">3.123456</span><span class="p">,</span> <span class="mf">4.789101112</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">ceil</span><span class="p">())</span>
+<span class="go">4.0 + 5.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">repres</span><span class="o">=</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">6.0e^1.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="complex.complex.Complex.conjugate">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">conjugate</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></em><a class="headerlink" href="#complex.complex.Complex.conjugate" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns the complex conjugate of this complex number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex">Complex</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.floor">
+<span class="sig-name descname"><span class="pre">floor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.floor" title="Permalink to this definition">#</a></dt>
+<dd><p>Use <cite>math.floor</cite> method to create a new complex number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex">Complex</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mf">3.123456</span><span class="p">,</span> <span class="mf">4.789101112</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">floor</span><span class="p">())</span>
+<span class="go">3.0 + 4.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">repres</span><span class="o">=</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">5.0e^0.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="complex.complex.Complex.imaginary">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">imaginary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#complex.complex.Complex.imaginary" title="Permalink to this definition">#</a></dt>
+<dd><p>Imaginary part.</p>
+<p>If modified, recomputes norm and argument by using <cite>complex.Complex.r_theta_from_ab</cite></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="complex.complex.Complex.norm">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">norm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#complex.complex.Complex.norm" title="Permalink to this definition">#</a></dt>
+<dd><p>Norm.</p>
+<p>If modified, recomputes real and imaginary parts by using <cite>complex.Complex.ab_from_r_theta</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Figure</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Figure</span></span></span><a class="headerlink" href="#complex.complex.Complex.plot" title="Permalink to this definition">#</a></dt>
+<dd><p>Plots the complex number and returns a <cite>plotly.graph_objs.Figure</cite> object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> (<em>Optional</em><em>[</em><em>Figure</em><em>]</em>) – Figure to plot in. Will create one if not specified</p></li>
+<li><p><strong>kwargs</strong> – Any keyword argument to pass to <cite>plotly.express.scatter</cite> (if <em>fig</em> is None) or
+<cite>plotly.graph_objects.Scatter</cite> (if <em>fig</em> is not None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Figure</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="complex.complex.Complex.real">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">real</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#complex.complex.Complex.real" title="Permalink to this definition">#</a></dt>
+<dd><p>Real part.</p>
+<p>If modified, recomputes norm and argument by using <cite>complex.Complex.r_theta_from_ab</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.round">
+<span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rount_to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.round" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns another complex number with rounded attributes using builting <cite>round</cite> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rount_to</strong> (<em>int</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex">Complex</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mf">3.123456</span><span class="p">,</span> <span class="mf">4.789101112</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">rount_to</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">3.12 + 4.79i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">rount_to</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">repres</span><span class="o">=</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">5.72e^0.99i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="complex.complex.Complex.theta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">theta</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#complex.complex.Complex.theta" title="Permalink to this definition">#</a></dt>
+<dd><p>Argument.</p>
+<p>If modified, recomputes real and imaginary parts by using <cite>complex.Complex.ab_from_r_theta</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.to_latex">
+<span class="sig-name descname"><span class="pre">to_latex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cartesian'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#complex.complex.Complex.to_latex" title="Permalink to this definition">#</a></dt>
+<dd><p>Formats the complex number into a LaTeX expression</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>repres</strong> (<em>str</em>) – Can be “cartesion”, “exp” or “trigo”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_latex</span><span class="p">())</span>
+<span class="go">$3.0 + 3.0i$</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="s2">&quot;trigo&quot;</span><span class="p">))</span>
+<span class="go">$4.242640687119285 \times (\cos(0.7853981633974483) + i \sin(0.7853981633974483))$</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">$4.242640687119285 \text{e}^{0.7853981633974483 i}$</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If given ‘repres’ argument is not “cartesian”, “trigo” nor “exp”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.to_repr">
+<span class="sig-name descname"><span class="pre">to_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cartesian'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#complex.complex.Complex.to_repr" title="Permalink to this definition">#</a></dt>
+<dd><p>str readable by exec() or eval()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>repres</strong> (<em>str</em>) – Can be “cartesion”, “exp” or “trigo”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="go">3.0 + 3.0 * i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_repr</span><span class="p">(</span><span class="s2">&quot;trigo&quot;</span><span class="p">))</span>
+<span class="go">4.242640687119285 * (cos(0.7853981633974483) + i * sin(0.7853981633974483))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_repr</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">4.242640687119285 * e ** (0.7853981633974483 * i)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If given ‘repres’ argument is not “cartesian”, “trigo” nor “exp”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cartesian'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#complex.complex.Complex.to_string" title="Permalink to this definition">#</a></dt>
+<dd><p>Human-readable str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>repres</strong> (<em>str</em>) – Can be “cartesion”, “exp” or “trigo”</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="go">3.0 + 3.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;trigo&quot;</span><span class="p">))</span>
+<span class="go">4.242640687119285 * (cos(0.7853981633974483) + isin(0.7853981633974483))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">4.242640687119285e^0.7853981633974483i</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If given ‘repres’ argument is not “cartesian”, “trigo” nor “exp”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="complex.complex.Complex.trunc">
+<span class="sig-name descname"><span class="pre">trunc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex"><span class="pre">Complex</span></a></span></span><a class="headerlink" href="#complex.complex.Complex.trunc" title="Permalink to this definition">#</a></dt>
+<dd><p>Use <cite>math.trunc</cite> method to create a new complex number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#complex.complex.Complex" title="complex.complex.Complex">Complex</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">znumber</span> <span class="o">=</span> <span class="n">Complex</span><span class="p">(</span><span class="mf">3.123456</span><span class="p">,</span> <span class="mf">4.789101112</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">znumber</span><span class="o">.</span><span class="n">trunc</span><span class="p">())</span>
+<span class="go">3.0 + 4.0i</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">((</span><span class="n">znumber</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">repres</span><span class="o">=</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="s2">&quot;exp&quot;</span><span class="p">))</span>
+<span class="go">5.0e^0.0i</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="complex.complex.ForbiddenAssignmentError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">complex.complex.</span></span><span class="sig-name descname"><span class="pre">ForbiddenAssignmentError</span></span><a class="headerlink" href="#complex.complex.ForbiddenAssignmentError" title="Permalink to this definition">#</a></dt>
+<dd><p>Home-made class used to tell the user that Complex does not allow for new attributes assignment. I.e, one
+can do ‘some_complex_number.a = 0’, but not ‘some_complex_number.foo = 0’, for ‘foo’ is not a known attribute of
+the class.</p>
+</dd></dl>
+
+</section>
+<section id="module-complex.functions">
+<span id="functions"></span><h2>Functions<a class="headerlink" href="#module-complex.functions" title="Permalink to this heading">#</a></h2>
+<p>Some arithmetic and trigonometric-related functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="complex.functions.ab_from_r_theta">
+<span class="sig-prename descclassname"><span class="pre">complex.functions.</span></span><span class="sig-name descname"><span class="pre">ab_from_r_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#complex.functions.ab_from_r_theta" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns real and imaginary part of real complex number from its norm and argument</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>norm</strong> (<em>float</em>) – </p></li>
+<li><p><strong>theta</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>real and imaginary parts</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="complex.functions.compatible_numbers">
+<span class="sig-prename descclassname"><span class="pre">complex.functions.</span></span><span class="sig-name descname"><span class="pre">compatible_numbers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#complex.functions.compatible_numbers" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns True if both numbers are equal or almost the same</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="complex.functions.r_theta_from_ab">
+<span class="sig-prename descclassname"><span class="pre">complex.functions.</span></span><span class="sig-name descname"><span class="pre">r_theta_from_ab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaginary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#complex.functions.r_theta_from_ab" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns norm and argument of a complex number from the real and imaginary parts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>) – </p></li>
+<li><p><strong>imaginary</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Norm and argument</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="readme.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Readme</p>
+      </div>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-complex.complex">
+   Complex Class
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex.complex.Complex">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Complex
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__add__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__add__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__eq__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__eq__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__iadd__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__iadd__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__idiv__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__idiv__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__imul__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__imul__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__init__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__init__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__ipow__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__ipow__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__isub__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__isub__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__mul__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__mul__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__ne__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__ne__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__neg__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__neg__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__pow__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__pow__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__radd__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__radd__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__rmul__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__rmul__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__rsub__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__rsub__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__rtruediv__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__rtruediv__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__setattr__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__setattr__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__sub__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__sub__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.__truediv__">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.__truediv__()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.cartesian">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.cartesian
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.ceil">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.ceil()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.conjugate">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.conjugate
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.floor">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.floor()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.imaginary">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.imaginary
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.norm">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.norm
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.plot">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.plot()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.real">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.real
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.round">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.round()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.theta">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.theta
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.to_latex">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.to_latex()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.to_repr">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.to_repr()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.to_string">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.to_string()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complex.complex.Complex.trunc">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Complex.trunc()
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex.complex.ForbiddenAssignmentError">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ForbiddenAssignmentError
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-complex.functions">
+   Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex.functions.ab_from_r_theta">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ab_from_r_theta()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex.functions.compatible_numbers">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       compatible_numbers()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complex.functions.r_theta_from_ab">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       r_theta_from_ab()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="_sources/complex.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022, Advestis.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
